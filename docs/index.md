@@ -31,6 +31,9 @@
            -->
           Old Blog
       </a>
+      <a style="mergin: 0 5px 0 0" href="https://gaohomepage.github.io/chinese_version/">
+      中文简介
+      </a>
       </div>
     </div>
     <p>

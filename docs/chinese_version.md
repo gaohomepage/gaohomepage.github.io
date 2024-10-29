@@ -53,3 +53,6 @@
   </figure>
   <!-- 调整图片大小 -->  
 </div>
+
+# 关于我
+我是中国科学技术大学计算机科学与技术学院的研三学生，在此之前，我于2022年在中国科学技术大学获得本科学位，这是我的中英文简历 [CV](https://drive.google.com/file/d/1-jOFyVDDH6-CR6xTUBX5Bku93zy-7YLj/view?usp=sharing)  [中文简历](https://drive.google.com/file/d/16KI5c-mxscEvvarNvjn6a5akq2l8lvCt/view?usp=sharing)。我的方向是多模态学习，近期以及未来的一段时间，我将专注于解决下列问题。
