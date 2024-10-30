@@ -1,5 +1,5 @@
 ---
-title: CS Basics
+title: CG Basics
 date: 2024-04-25 15:12:22
 tags:
     - Computer Graphics
