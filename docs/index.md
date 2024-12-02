@@ -2,6 +2,13 @@
 <img src="https://s2.loli.net/2024/10/25/Cq6s7DEWtA8U32i.jpg" alt='selfphoto" align="right"> -->
 <!-- ![photo.jpg](https://s2.loli.net/2024/10/25/Cq6s7DEWtA8U32i.jpg) -->
 <div style="display: flex; align-items: center; justify-content: space-between;">  
+  <!-- <figure>
+  <img src="https://s2.loli.net/2024/10/25/Cq6s7DEWtA8U32i.jpg" alt="描述" style="max-height: 100px; max-width: 100px;"> 
+  <figurecaption  style="font-size: 10px;">
+  2021年摄于中国科学技术大学东区老校门前 
+  
+  </figurecaption>
+  </figure> -->
   <h1>Welcome to Haihan's HomePage  
   <div style="margin-top: 20px; font-size: 14px;">  
     <p>  
@@ -65,7 +72,7 @@ My name is Haihan Gao(高海涵), a master graduated student from University of 
 
 
 ## resume 
-Here is my [CV](https://drive.google.com/file/d/1-jOFyVDDH6-CR6xTUBX5Bku93zy-7YLj/view?usp=sharing) and [中文简历](https://drive.google.com/file/d/16KI5c-mxscEvvarNvjn6a5akq2l8lvCt/view?usp=sharing)
+Here is my [CV](https://drive.google.com/file/d/1-W3AOHvm9tNahpsqxCW8LHEuA8C9hDih/view?usp=sharing) and [中文简历](https://drive.google.com/file/d/16KI5c-mxscEvvarNvjn6a5akq2l8lvCt/view?usp=sharing)
 <!-- ## Publications -->
 
 <h2 id="publications" style="margin: 2px 0px -15px;">Selected Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?hl=en&amp;user=TE7lbQwAAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.org/pid/227/4399.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp></h2>

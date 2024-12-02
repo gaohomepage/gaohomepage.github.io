@@ -1,0 +1,1929 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gaohomepage.github.io/Open_Courses/CMU15445/CMU15445-24-lab0/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>CMU15445_24_lab0 - Gao's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cmu15445-lab1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-header__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CMU15445_24_lab0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-nav__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gao's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Paper-List/" class="md-nav__link">
+        Paper List
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chinese_version/" class="md-nav__link">
+        Chinese version
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Artificial Intelligence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Artificial Intelligence" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Artificial Intelligence
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Generative model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Generative model" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Generative model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/DALLE/" class="md-nav__link">
+        DALLE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/Diffusion/" class="md-nav__link">
+        Diffusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Multimodal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Multimodal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Multimodal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/ALBEF-and-BLIP/" class="md-nav__link">
+        ALBEF and BLIP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Object-Detection-via-Prompt-Learning/" class="md-nav__link">
+        Object Detection via Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Visual-Language-Model-CLIP-and-Prompt-Learning/" class="md-nav__link">
+        Visual Language Model:CLIP and Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Cycle-Self-Training/" class="md-nav__link">
+        Cycle Self-Training
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/VQ-VAE/" class="md-nav__link">
+        VQ-VAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Variation_Inference/" class="md-nav__link">
+        GMM EM VI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Robotics Embodiedai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Robotics Embodiedai" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Robotics Embodiedai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/CLIP4EmbodiedAI/" class="md-nav__link">
+        CLIP4EmbodiedAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/IROS-Paper-Reading-Object-Centric-3D-Representation/" class="md-nav__link">
+        IROS Paper Reading Object Centric 3D Representation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Vision
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vision" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Vision
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Contrast-and-Self-Supervised-Learning/" class="md-nav__link">
+        Contrast and Self-Supervised Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/MAE/" class="md-nav__link">
+        MAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Moco/" class="md-nav__link">
+        Moco
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/No-negative-sample-Contrast-Learning/" class="md-nav__link">
+        No negative sample Contrast Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/selective-search-nms/" class="md-nav__link">
+        selective-search-nms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Computer Graphics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Graphics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Graphics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_Graphics/Computer_Graphics_Basis/" class="md-nav__link">
+        CG Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Financial Investment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Financial Investment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Financial Investment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Future-Contract-Market/" class="md-nav__link">
+        Financial Future Contract Market
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Intro/" class="md-nav__link">
+        Financial(Intro)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-Macroeconomic/" class="md-nav__link">
+        quat Macroeconomic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-stock-data/" class="md-nav__link">
+        Quat stock data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Math
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Math" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          ConvexOptimization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ConvexOptimization" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          ConvexOptimization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/Convex-Optimization-Convex-Problems/" class="md-nav__link">
+        Convex Optimization Convex Problems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/Convex-Optimization-Introduction/" class="md-nav__link">
+        Convex Optimization Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/Convex-Optimization-set-and-functions/" class="md-nav__link">
+        Convex Optimization:set and functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/KKTcondition/" class="md-nav__link">
+        KKTcondition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/Quasi-function/" class="md-nav__link">
+        Quasi function
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/duality-explain/" class="md-nav__link">
+        duality explain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/duality-review/" class="md-nav__link">
+        duality review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/optimization-method/" class="md-nav__link">
+        optimization method
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/ConvexOptimization/sensitive-analysis/" class="md-nav__link">
+        sensitive-analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Fourier Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fourier Analysis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fourier Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Fourier_Analysis/Fourier-Analysis-Basic-Properties-of-Fourier-Series/" class="md-nav__link">
+        Fourier Analysis(Basic Properties of Fourier Series)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Fourier_Analysis/Fourier-Analysis-Chapter-2-Overview/" class="md-nav__link">
+        Fourier Analysis Chapter 2 Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Fourier_Analysis/Fourier-Analysis-Chapter-3-Convergence/" class="md-nav__link">
+        Fourier Analysis Chapter 3 Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Fourier_Analysis/Fourier-Analysis-Intro/" class="md-nav__link">
+        Fourier_Analysis_Intro
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Information Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Information Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Information Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Data-Transmission-Inequality/" class="md-nav__link">
+        Data Transmission Inequality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Element-of-Information-Chapter-2/" class="md-nav__link">
+        Element of Information(Chapter 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Entropy-and-Channel-Capacity/" class="md-nav__link">
+        Entropy and Channel Capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Information-Measures-of-Discrete-Systems/" class="md-nav__link">
+        Information Measures of Discrete Systems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Information-Theory-AEP/" class="md-nav__link">
+        Information Theory AEP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Information-Theory-Divergence-and-variational-distance/" class="md-nav__link">
+        Information Theory(Divergence and variational distance)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Information_Theory/Information-Theory-Mathematical-Basic-and-Introduction/" class="md-nav__link">
+        Information Theory:Mathematical Basic and Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Math/Others/optimize-transport/" class="md-nav__link">
+        optimize transport
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Open Courses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open Courses" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Open Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          CMU15445
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CMU15445" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          CMU15445
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CMU15445_24_lab0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CMU15445_24_lab0
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#word" class="md-nav__link">
+    word
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or-set" class="md-nav__link">
+    Or-set
+  </a>
+  
+    <nav class="md-nav" aria-label="Or-set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crdt" class="md-nav__link">
+    例子（CRDT）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orset" class="md-nav__link">
+    Orset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-demystification-of-crdt" class="md-nav__link">
+    Practical Demystification of CRDT
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Demystification of CRDT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#last-write-win" class="md-nav__link">
+    Last Write Win
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-phase-set" class="md-nav__link">
+    2-Phase Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-set_1" class="md-nav__link">
+    Or-set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          NJU OS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NJU OS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          NJU OS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NJU_OS/NJU-OS-Parallel-Programming/" class="md-nav__link">
+        NJU OS Parallel Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NJU_OS/NJU-OS-mutex/" class="md-nav__link">
+        NJU OS mutex
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="System" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          System
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/Objective-File/" class="md-nav__link">
+        Objective File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cpp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/cpp/Cpp-diamond-hierarchy/" class="md-nav__link">
+        Cpp diamond hierarchy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Tech Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tech Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tech Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/PytorchNLLloss/" class="md-nav__link">
+        PytorchNLLloss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/Singularity-Intro/" class="md-nav__link">
+        Singularity Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/ssh-forward/" class="md-nav__link">
+        ssh forward
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#word" class="md-nav__link">
+    word
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#or-set" class="md-nav__link">
+    Or-set
+  </a>
+  
+    <nav class="md-nav" aria-label="Or-set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crdt" class="md-nav__link">
+    例子（CRDT）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orset" class="md-nav__link">
+    Orset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-demystification-of-crdt" class="md-nav__link">
+    Practical Demystification of CRDT
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Demystification of CRDT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#last-write-win" class="md-nav__link">
+    Last Write Win
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-phase-set" class="md-nav__link">
+    2-Phase Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-set_1" class="md-nav__link">
+    Or-set
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="cmu15445-lab1">CMU15445 lab1</h1>
+<h2 id="word">word</h2>
+<ol>
+<li>draft 起草</li>
+<li>harmonious 和谐</li>
+<li>commutative 可交换的</li>
+<li>associative 联想性的</li>
+<li>idempotent 幂等的</li>
+<li>reconcile 和解，调和</li>
+<li>specification 规格，规范，说明书</li>
+<li>replica 副本</li>
+<li>omnipresent 无所不在的</li>
+<li>mock 嘲弄，模拟的</li>
+</ol>
+<h2 id="or-set">Or-set</h2>
+<p>多用户同时对文档进行编辑，即使两个用户同时对一段文本采取不同的编辑方式，也需要保证所有用户看到的内容是一样的，CRDT是一种可以在多个分布式节点上复制的数据结构，保证数据的一致性。</p>
+<h3 id="crdt">例子（CRDT）</h3>
+<blockquote>
+<p>如何不加锁的情况下统计一件事发生的次数</p>
+</blockquote>
+<p>每个副本保存自己调用接口的计数器，发生次数=所有副本计数器之和，更新自己计数器无需加锁</p>
+<blockquote>
+<p>Grow only set：只能向集合中添加元素（日志）</p>
+</blockquote>
+<p>每个副本向自己的集合中添加元素，对所有集合取并集</p>
+<h3 id="orset">Orset</h3>
+<p>实现Observed Remove Set，这是一种Conflict-free replicated data type。这种数据结构允许分布式系统之多个节点在同时操作的同时无需实时同步，当所有操作都被执行后，最终系统状态收敛于确定状态。</p>
+<p>Orset在Grow only set中考虑到从集合中删除一个元素的remove操作，这个算法维护两个集合E/T，前者用于保存加入元素（用户可见），后者用于保存删除元素</p>
+<p>添加元素时需要生成一个独一无二的tag n，将其和元素e一齐加到集合中，</p>
+<p><img alt="image-20240228174730476" src="https://s2.loli.net/2024/03/04/sfZkbtOV5Y432la.png" /></p>
+<p>删除元素时需要将删除的pair <span class="arithmatex">\((e,n)\)</span>加入到T中</p>
+<p><img alt="image-20240228180047382" src="https://s2.loli.net/2024/03/04/aKXz3Pfm8Ud1F4A.png" /></p>
+<p>合并副本A到副本B，首先检查A中是否有元素存在于B的Tombstone set T中（对B也进行相似操作），删除这些元素后再和B中元素合并，需要实现的接口包括</p>
+<ol>
+<li>查找元素是否在set中（查找每个E并过滤掉每个T） <code>Contains(elem)</code></li>
+<li>将元素加入到set中 <code>Add(elem,uid)</code>，uid时生成的unique id</li>
+<li>删除元素 <code>Remove(elem)</code></li>
+<li>合并集合 <code>Merge(set)</code></li>
+<li>返回集合中所有元素 <code>Elements()</code>，集合中元素存在当且仅当再add set并且不再tombstone set中</li>
+</ol>
+<blockquote>
+<p>为什么要同时维护对应的unique id</p>
+</blockquote>
+<p>回到Observe Remove这个名字本身，这表明<strong>删除操作仅限于副本能看到的元素</strong>，例如两个节点A/B，节点A删除了一个节点B插入，但是对于A不可见的元素，则A的删除操作无效，后续B插入并不会受到影响</p>
+<blockquote>
+<p>本质上是一个弱一致性模型，毋须满足任何时候状态都相同</p>
+</blockquote>
+<h3 id="practical-demystification-of-crdt">Practical Demystification of CRDT</h3>
+<ol>
+<li>解决分布式节点如何在掉线后进行同步，或者因为连接不稳定导致无法实时同步的情况</li>
+<li>R: Replicated </li>
+<li>C: Conflict Free 自动解决不同副本不一致导致的冲突(Merge)</li>
+<li>需要Merge操作 1）可交换 2）可结合 3）幂等 <span class="arithmatex">\(x\cdot x = x\)</span></li>
+<li>Merge操作的结果收敛于唯一值</li>
+<li>操作</li>
+<li>修改局部保存的数据</li>
+<li>merge修改后的数据</li>
+<li>converge所有终端的数据</li>
+</ol>
+<h4 id="last-write-win">Last Write Win</h4>
+<p>考虑修改一个变量的情况，现在用户需要记录某个偏好（例如喜欢去的地方），在不同设备上记录了不同的偏好，Last Write Win要求同时保存记录的Wall Time，同步时选择最近的Wall Time记录作为最终的结果</p>
+<blockquote>
+<ol>
+<li>不能按照发送时间作为判断标准，因为需要考虑设备离线的情况，早的记录可能在较晚时间通过网络发出</li>
+<li>相同Wall Time本身需要强同步。。</li>
+</ol>
+</blockquote>
+<p>以上方法将会导致stale update的问题，即服务器不能判断哪个更新是更新的</p>
+<h4 id="2-phase-set">2-Phase Set</h4>
+<p>允许加入/删除元素</p>
+<ol>
+<li>节点A：加入<code>cat/dog</code>，删除<code>ape</code></li>
+<li>节点B：加入<code>cat/ape</code></li>
+</ol>
+<p>算法</p>
+<ol>
+<li>查找：要求在Addset不在Removeset中</li>
+<li>合并：合并两个集合的Addset和Removalset</li>
+</ol>
+<p>这样导致不能重复加入被删除的元素，以及无法直接对集合中的元素进行更新（导致remove set增长迅速）</p>
+<blockquote>
+<p>Solution 1：保存/删除元素时同时保存timestamp，同样维护两个G-set用于加入和删除元素</p>
+<p>重新加入删除的元素时比较加入/删除操作的timestamp以保留较新的操作</p>
+</blockquote>
+<h4 id="or-set_1">Or-set</h4>
+<p>解决在Set中修改元素，引入unique tag标记插入/删除操作</p>
+<ol>
+<li>节点A Add {(#a,”cat”),(#b,”dog”)} Rem {(#a,”cat”}</li>
+<li>节点B Add {(#c,”cat”),(#d,”ape”)} Rem {(#a,”cat”}</li>
+</ol>
+<p>得到的集合为</p>
+<ol>
+<li>Add {(#a,”cat”),(#b,”dog”),(#c,”cat”),(#d,”ape”)}</li>
+<li>Rem {(#a,”cat”)}</li>
+</ol>
+<blockquote>
+<p>为什么要保存特定的identifier？这是为了保证re-add after delete，每次加入时都会添加一个全局唯一的identifier，如果最后的集合写成</p>
+<p><code>Add{(#b,"dog")} Rem{("#a","dog")}</code>这意味dog被re-add after delete，这样也导致删除操作不能删除其它节点添加但是本地并不存在的元素</p>
+</blockquote>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../../Math/Others/optimize-transport/" class="md-footer__link md-footer__link--prev" aria-label="Previous: optimize transport" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              optimize transport
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../NJU_OS/NJU-OS-Parallel-Programming/" class="md-footer__link md-footer__link--next" aria-label="Next: NJU OS Parallel Programming" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              NJU OS Parallel Programming
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [{"login": null, "password": "admin", "username": "admin"}], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gaohomepage.github.io/Math/ConvexOptimization/Convex-Optimization-set-and-functions/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Convex Optimization:set and functions - Gao's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#convex-optimizationsets-and-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-header__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Convex Optimization:set and functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-nav__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gao's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Paper-List/" class="md-nav__link">
+        Paper List
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chinese_version/" class="md-nav__link">
+        Chinese version
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Artificial Intelligence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Artificial Intelligence" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Artificial Intelligence
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Generative model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Generative model" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Generative model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/DALLE/" class="md-nav__link">
+        DALLE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/Diffusion/" class="md-nav__link">
+        Diffusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Multimodal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Multimodal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Multimodal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/ALBEF-and-BLIP/" class="md-nav__link">
+        ALBEF and BLIP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Object-Detection-via-Prompt-Learning/" class="md-nav__link">
+        Object Detection via Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Visual-Language-Model-CLIP-and-Prompt-Learning/" class="md-nav__link">
+        Visual Language Model:CLIP and Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Cycle-Self-Training/" class="md-nav__link">
+        Cycle Self-Training
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/VQ-VAE/" class="md-nav__link">
+        VQ-VAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Variation_Inference/" class="md-nav__link">
+        GMM EM VI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Robotics Embodiedai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Robotics Embodiedai" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Robotics Embodiedai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/CLIP4EmbodiedAI/" class="md-nav__link">
+        CLIP4EmbodiedAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/IROS-Paper-Reading-Object-Centric-3D-Representation/" class="md-nav__link">
+        IROS Paper Reading Object Centric 3D Representation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Vision
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vision" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Vision
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Contrast-and-Self-Supervised-Learning/" class="md-nav__link">
+        Contrast and Self-Supervised Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/MAE/" class="md-nav__link">
+        MAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Moco/" class="md-nav__link">
+        Moco
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/No-negative-sample-Contrast-Learning/" class="md-nav__link">
+        No negative sample Contrast Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/selective-search-nms/" class="md-nav__link">
+        selective-search-nms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Computer Graphics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Graphics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Graphics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_Graphics/Computer_Graphics_Basis/" class="md-nav__link">
+        CG Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Financial Investment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Financial Investment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Financial Investment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Future-Contract-Market/" class="md-nav__link">
+        Financial Future Contract Market
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Intro/" class="md-nav__link">
+        Financial(Intro)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-Macroeconomic/" class="md-nav__link">
+        quat Macroeconomic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-stock-data/" class="md-nav__link">
+        Quat stock data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Math
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Math" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          ConvexOptimization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ConvexOptimization" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          ConvexOptimization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convex-Optimization-Convex-Problems/" class="md-nav__link">
+        Convex Optimization Convex Problems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convex-Optimization-Introduction/" class="md-nav__link">
+        Convex Optimization Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Convex Optimization:set and functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Convex Optimization:set and functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-and-examples-of-convex-set" class="md-nav__link">
+    Define and Examples of Convex Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Define and Examples of Convex Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    Define
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-oof-convex-cone" class="md-nav__link">
+    Example oof Convex Cone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-and-operation-of-convex-set" class="md-nav__link">
+    Properties and Operation of Convex Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties and Operation of Convex Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    分割超平面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    支撑超平面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-and-example-of-convex-functions" class="md-nav__link">
+    Define and Example of Convex functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Define and Example of Convex functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define_1" class="md-nav__link">
+    Define
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-convex-function" class="md-nav__link">
+    Properties of convex function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convex-optimizationustc" class="md-nav__link">
+    Convex Optimization(USTC)
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex Optimization(USTC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affine-set" class="md-nav__link">
+    Affine Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-combination" class="md-nav__link">
+    Affine Combination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    锥和凸锥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    空间和子空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    超平面与半空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    定义多面体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    定义单纯性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    对称矩阵集合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    保持凸性的操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    凸函数的延拓
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    集合的示性函数是凸函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    凸函数的一阶条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    映射凸函数到低维(曲面映射到曲线)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二阶条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    范数
+  </a>
+  
+    <nav class="md-nav" aria-label="范数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-" class="md-nav__link">
+    0-范数(刻画向量的稀疏程度)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    极大值
+  </a>
+  
+    <nav class="md-nav" aria-label="极大值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    极大极小问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-sum-up" class="md-nav__link">
+    不可导函数的解析逼近(log-sum-up)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    行列式的对数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-that-conserve-convex" class="md-nav__link">
+    Operations that conserve convex
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations that conserve convex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    非负加权和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    积分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    仿射映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    max函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    函数的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    函数的透视
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    函数的共轭
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    凸集和凸函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quasi-convex-function" class="md-nav__link">
+    Quasi Convex function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KKTcondition/" class="md-nav__link">
+        KKTcondition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quasi-function/" class="md-nav__link">
+        Quasi function
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duality-explain/" class="md-nav__link">
+        duality explain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duality-review/" class="md-nav__link">
+        duality review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization-method/" class="md-nav__link">
+        optimization method
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-analysis/" class="md-nav__link">
+        sensitive-analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Fourier Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fourier Analysis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fourier Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Basic-Properties-of-Fourier-Series/" class="md-nav__link">
+        Fourier Analysis(Basic Properties of Fourier Series)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Chapter-2-Overview/" class="md-nav__link">
+        Fourier Analysis Chapter 2 Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Chapter-3-Convergence/" class="md-nav__link">
+        Fourier Analysis Chapter 3 Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Intro/" class="md-nav__link">
+        Fourier_Analysis_Intro
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Information Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Information Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Information Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Data-Transmission-Inequality/" class="md-nav__link">
+        Data Transmission Inequality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Element-of-Information-Chapter-2/" class="md-nav__link">
+        Element of Information(Chapter 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Entropy-and-Channel-Capacity/" class="md-nav__link">
+        Entropy and Channel Capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Measures-of-Discrete-Systems/" class="md-nav__link">
+        Information Measures of Discrete Systems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-AEP/" class="md-nav__link">
+        Information Theory AEP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Divergence-and-variational-distance/" class="md-nav__link">
+        Information Theory(Divergence and variational distance)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Mathematical-Basic-and-Introduction/" class="md-nav__link">
+        Information Theory:Mathematical Basic and Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/optimize-transport/" class="md-nav__link">
+        optimize transport
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Open Courses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open Courses" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Open Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          CMU15445
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CMU15445" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          CMU15445
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/CMU15445/CMU15445-24-lab0/" class="md-nav__link">
+        CMU15445_24_lab0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          NJU OS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NJU OS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          NJU OS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-Parallel-Programming/" class="md-nav__link">
+        NJU OS Parallel Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-mutex/" class="md-nav__link">
+        NJU OS mutex
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="System" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          System
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/Objective-File/" class="md-nav__link">
+        Objective File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cpp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/cpp/Cpp-diamond-hierarchy/" class="md-nav__link">
+        Cpp diamond hierarchy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Tech Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tech Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tech Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/PytorchNLLloss/" class="md-nav__link">
+        PytorchNLLloss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/Singularity-Intro/" class="md-nav__link">
+        Singularity Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/ssh-forward/" class="md-nav__link">
+        ssh forward
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#define-and-examples-of-convex-set" class="md-nav__link">
+    Define and Examples of Convex Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Define and Examples of Convex Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define" class="md-nav__link">
+    Define
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-oof-convex-cone" class="md-nav__link">
+    Example oof Convex Cone
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-and-operation-of-convex-set" class="md-nav__link">
+    Properties and Operation of Convex Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties and Operation of Convex Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    分割超平面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    支撑超平面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    Operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-and-example-of-convex-functions" class="md-nav__link">
+    Define and Example of Convex functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Define and Example of Convex functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define_1" class="md-nav__link">
+    Define
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-convex-function" class="md-nav__link">
+    Properties of convex function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convex-optimizationustc" class="md-nav__link">
+    Convex Optimization(USTC)
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex Optimization(USTC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affine-set" class="md-nav__link">
+    Affine Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-combination" class="md-nav__link">
+    Affine Combination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    锥和凸锥
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    空间和子空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    超平面与半空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    定义多面体
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    定义单纯性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    对称矩阵集合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    保持凸性的操作
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    凸函数的延拓
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    集合的示性函数是凸函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    凸函数的一阶条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    映射凸函数到低维(曲面映射到曲线)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    二阶条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    范数
+  </a>
+  
+    <nav class="md-nav" aria-label="范数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-" class="md-nav__link">
+    0-范数(刻画向量的稀疏程度)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    极大值
+  </a>
+  
+    <nav class="md-nav" aria-label="极大值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    极大极小问题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-sum-up" class="md-nav__link">
+    不可导函数的解析逼近(log-sum-up)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    行列式的对数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-that-conserve-convex" class="md-nav__link">
+    Operations that conserve convex
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations that conserve convex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    非负加权和
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    积分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    仿射映射
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    max函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    函数的函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    函数的透视
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    函数的共轭
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    凸集和凸函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quasi-convex-function" class="md-nav__link">
+    Quasi Convex function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="convex-optimizationsets-and-functions">Convex Optimization——Sets and Functions</h1>
+<h2 id="define-and-examples-of-convex-set">Define and Examples of Convex Set</h2>
+<h3 id="define">Define</h3>
+<ol>
+<li>凸集</li>
+<li>n个点的凸组合</li>
+<li>集合C的凸锥 <span class="arithmatex">\(\{tx+(1-t)y|\forall x,y\in C,\forall t\in[0,1] \}\)</span></li>
+<li>Cone:<span class="arithmatex">\(\forall x\in C,t\geq 0 \to tx \in C\)</span></li>
+<li>Convex Cone <span class="arithmatex">\(x_1,x_2\in C\to t_1 x_1 +t_2 x_2\in C,\forall t_1,t_2\geq 0\)</span></li>
+<li>Conic Combination <span class="arithmatex">\(x_1,x_2,\cdots,x_k\in \R\)</span>.Conic Combination is <span class="arithmatex">\(\sum_{i=1}^k \theta_i x_i,\theta_i\geq 0\)</span></li>
+<li>Conic hull of set C:C中所有点组成的Conic Combination</li>
+</ol>
+<h3 id="example-oof-convex-cone">Example oof Convex Cone</h3>
+<blockquote>
+<p>Normal Cone: the normal cone of a given set C and <span class="arithmatex">\(x\in C\)</span> is
+$$
+\mathcal N_{C} ={g|g^T x\geq g^T y \forall y\in C}
+$$
+必然是Convex，随后不等式两边同乘正标量并不影响不等式，理论解释是和给定一个凸锥中一个向量和凸集中一点内积大于其和凸集中任何一点向量内积</p>
+</blockquote>
+<h2 id="properties-and-operation-of-convex-set">Properties and Operation of Convex Set</h2>
+<h3 id="properties">Properties</h3>
+<h4 id="_1">分割超平面</h4>
+<p>两个不相交凸集存在分割超平面</p>
+<h4 id="_2">支撑超平面</h4>
+<p>非空凸集在边界点处存在支撑超平面</p>
+<h3 id="operations">Operations</h3>
+<ol>
+<li>凸集之交</li>
+<li>线性变换<span class="arithmatex">\(aC+b =\{ax+b|x\in C \}\)</span>(拉伸+平移)</li>
+<li>Affine images and preimages <span class="arithmatex">\(f(x) = Ax+b,x\in C\)</span>，反之假设D为Affine Set，则<span class="arithmatex">\(\{x:f(x)\in D \}\)</span>为Convex Set</li>
+</ol>
+<blockquote>
+<p>讲义中还提到一个例子称为Linear matrix inequality
+$$
+A_1,A_2,\cdots,A_k,B\in S^n,x=(x_1,x_2,\cdots,x_k)\in \R^k\newline
+x_1A_1+x_2A_2 +\cdots+x_k A_k\succeq B
+$$
+给定<span class="arithmatex">\(A_1,A_2,\cdots,A_k,B\)</span>，则满足上述不等式的<span class="arithmatex">\(x\in \R^k\)</span>组成的集合C是凸集</p>
+<blockquote>
+<p>Suppose <span class="arithmatex">\(x,y\in C,t\in [0,1]\)</span>，则要证明
+$$
+(t x_1+(1-t) y_1) A_1 +(t x_2 +(1-t) y_2) A_2 +\cdots+(tx_k +(1-y) y_k) A_k\succeq B
+$$
+结论显然</p>
+</blockquote>
+<p>perspective images and preimages，定义<span class="arithmatex">\(\R^n \times R_{++}\to \R^n\)</span>上的perspective function<span class="arithmatex">\(R_{++}\)</span>是由正实数组成的空间
+$$
+P(x,z) = \frac{x}{z}
+$$
+<span class="arithmatex">\(\forall z&gt;0\)</span>如果<span class="arithmatex">\(C\subseteq dom(P)\)</span>是凸的那么<span class="arithmatex">\(P(C)\)</span>也是Convex的</p>
+</blockquote>
+<h2 id="define-and-example-of-convex-functions">Define and Example of Convex functions</h2>
+<h3 id="define_1">Define</h3>
+<div class="arithmatex">\[
+f(t x+(1-t)y)\leq t f(x) + (1-t) f(y),t\in [0,1]
+\]</div>
+<h3 id="example">Example</h3>
+<ol>
+<li>Quadratic function <span class="arithmatex">\(f(x) = x^T Q x+b^T x+c,Q\)</span>是正定矩阵</li>
+<li>Least Square loss <span class="arithmatex">\(\parallel y -Ax \parallel_2^2\)</span></li>
+<li>任何向量范数<span class="arithmatex">\(\parallel x\parallel\)</span></li>
+</ol>
+<blockquote>
+<p>1的证明，只需要证明
+$$
+(t x+(1-t) y)^T Q (tx +(1-t)) \leq t x^T Q x + (1-t) y^T Q y\newline
+$$
+等价于
+$$
+\quad t^2 x^T Q x+(1-t)^2 y^T Q y + t(1-t) x^T Q y+ t(1-t) y^T Q x \leq t  x^T Q x +(1-t) y^T Qy
+$$
+写成
+\begin{aligned}
+t(1-t) x^T Q x+t(1-t) y^T Q y - t(1-t) x^T Q y - t(1-t) y^T Q x&amp;\geq 0\newline
+x^TQ x +y^T Qy - x^T Q y - y^TQ x&amp;\geq 0\newline
+(x-y)^T Q(x-y)&amp;\geq 0
+\end{aligned}</p>
+<p>2写成<span class="arithmatex">\(f(x) = (y-Ax)^T (y -A x) =y^T y +x^T A^T A x-y^T A x-x^T A y\)</span></p>
+</blockquote>
+<h2 id="properties-of-convex-function">Properties of convex function</h2>
+<ol>
+<li>Epi graph定义为<span class="arithmatex">\(epi(f) = (x,t)\in dom (f)\times \R:f(x)\leq t\)</span>，一个函数是convex当且仅当epigraph是convex</li>
+<li>Sublevel set对于所有t都是convex</li>
+</ol>
+<blockquote>
+<p>Epigraph是<span class="arithmatex">\(\R^{n+1}\)</span>维，而Sublevel set是<span class="arithmatex">\(\R^n\)</span>维</p>
+</blockquote>
+<h2 id="convex-optimizationustc">Convex Optimization(USTC)</h2>
+<h3 id="affine-set">Affine Set</h3>
+<p><span class="arithmatex">\(x_1,x_2\)</span>，经过两点的直线表示为
+$$
+\theta x_1 + (1-\theta )x_2,\theta\in \R
+$$
+<span class="arithmatex">\(\theta\in [0,1]\)</span>表示线段</p>
+<p>定义Affine Set</p>
+<blockquote>
+<p>A Set <span class="arithmatex">\(C\)</span> is Affine Set <span class="arithmatex">\(\Rightarrow ,\forall x_1,x_2\in C,\theta\in \R,(1-\theta)x_1+\theta x_2\in C\)</span></p>
+</blockquote>
+<h3 id="affine-combination">Affine Combination</h3>
+<p><span class="arithmatex">\(x_1,x_2,\cdots,x_n\in C,\theta_1,\theta_2,\cdots,\theta_n\in \R\)</span>并且
+$$
+\sum_{i=1}^n \theta_i =1
+$$
+仿射组合定义为
+$$
+\sum_{i=1}^n \theta_i x_i 
+$$
+仿射集的第二个定义为</p>
+<blockquote>
+<p>对于<span class="arithmatex">\(\forall x_1,x_2,\cdots,x_n\in C\)</span>，它们的仿射组合属于C</p>
+</blockquote>
+<p>讨论特殊的仿射集，满足
+$$
+\theta x_1+ (1-\theta)x_2\in C\to \alpha x_1+\beta x_2\in C
+$$
+显然这样的集合需要满足<span class="arithmatex">\(0\in C\)</span>，假设C是Affine Set，定义集合
+$$
+V = C-x_0 ={x-x_0|x\in C \quad x_0\in C}
+$$
+满足上述条件</p>
+<blockquote>
+<p>V定义了仿射集的一个变换，这是<span class="arithmatex">\(\R^n\)</span>空间的一个子空间</p>
+</blockquote>
+<h3 id="_3">例子</h3>
+<blockquote>
+<p>线性方程组的解集合<span class="arithmatex">\(\{x|Ax=b \}\)</span>是Affine Set，对应的子空间是满足<span class="arithmatex">\(\{x|Ax=0 \}\)</span>解空间(A的化0空间)</p>
+<p>反之：任意仿射集可以看成线性方程解空间</p>
+<blockquote>
+<p>假设C是<span class="arithmatex">\(\R^n\)</span>上的仿射集，必然<span class="arithmatex">\(\exist A\in \R^{m\times n},b\in R^m,\forall x\in C,Ax = b\)</span>
+</p>
+</blockquote>
+<p>基于任意集合C，构造尽可能小的仿射集</p>
+<blockquote>
+<p>仿射包
+$$
+Aff \ C = {\sum_{i=1}^k \theta_i x_i|x_1,x_2,\cdots,x_k \in C,\sum_{i=1}^k \theta_i =1 }
+$$
+仿射集的仿射包是它本身</p>
+</blockquote>
+</blockquote>
+<h3 id="_4">锥和凸锥</h3>
+<blockquote>
+<ol>
+<li>锥 <span class="arithmatex">\(x\in C,\forall \theta \geq 0,\theta x\in C\)</span></li>
+<li>凸锥 <span class="arithmatex">\(x_1,x_2\in C,\forall \theta_1,\theta_2\geq 0\)</span></li>
+<li>凸锥组合 <span class="arithmatex">\(x_1,x_2,\cdots,x_k,\theta_1,\theta_2,\cdots,\theta_k\geq 0\)</span>, <span class="arithmatex">\(\sum_{i=1}^k \theta_i x_i\)</span>称为k个点的凸锥组合</li>
+<li>凸锥包</li>
+</ol>
+</blockquote>
+<h3 id="_5">空间和子空间</h3>
+<p>满足对加减数乘闭合并且是空间的子集</p>
+<h3 id="_6">超平面与半空间</h3>
+<p>定义超平面
+$$
+{x|a^T x=b }
+$$
+半空间
+$$
+{x|a^T x\geq b }
+$$</p>
+<h3 id="_7">定义多面体</h3>
+<blockquote>
+<div class="arithmatex">\[
+P=\{x|a_j^T x\leq b_j,j=1,2,\cdots,m,c_i^Tx=d_i,i=1,2,\cdots,n \}
+\]</div>
+</blockquote>
+<h3 id="_8">定义单纯性</h3>
+<blockquote>
+<p>Suppose <span class="arithmatex">\(x_0,x_1,\cdots,x_k\in\R^n\)</span>，<span class="arithmatex">\(x_1-x_0,x_2-x_0,\cdots,x_k-x_0\)</span>线性无关，则称
+$$
+{c|c =\sum_{i=0}^k \theta_i x_i,\sum_{i=0}^k \theta_i =1,\theta_i\in [0,1] }
+$$</p>
+<p>每一个单纯性都能写成多面体的形式</p>
+<blockquote>
+<p>proof
+$$
+c = v_0 +\sum_{i=1}^k \theta_i(v_i-v_0)= v_0 +By\newline
+B=(v_1-v_0,v_2-v_0,\cdots,v_k -v_0)\newline
+y = (\theta_1,\theta_2,\cdots,\theta_k)^T
+$$
+<span class="arithmatex">\(B\in \R^{n\times k},rank(B)=k\)</span>，因此可以变换为上三角矩阵
+$$
+AB = \begin{pmatrix}
+I_k\newline
+0
+\end{pmatrix}\newline
+A= \begin{pmatrix}
+A_1\newline
+A_2
+\end{pmatrix}
+$$
+两边乘上A，得到
+$$
+Ac = Av_0 + AB y\Rightarrow \begin{pmatrix}
+A_1\newline
+A_2
+\end{pmatrix}c +\begin{pmatrix}
+I_k\newline
+0\end{pmatrix} y
+$$
+得到
+$$
+A_1 x = A_1 v_0 +y\newline
+A_2 x = A_2 v_0
+$$
+考虑到
+$$
+\sum_{i=1}^k \theta_i \leq 1,\theta_i\geq 0
+$$
+因此(21)写成
+$$
+A_1 x \geq A_1 v_0\newline
+1^TA_1  x\leq 1+ 1^T A_1 v_0\newline
+A_2x= A_2 v_0
+$$
+这样推导出它的多面体形式</p>
+</blockquote>
+</blockquote>
+<h3 id="_9">对称矩阵集合</h3>
+<div class="arithmatex">\[
+S^n =\{x\in \R^{n\times n}|x=x6T \}
+\]</div>
+<p>对称半正定矩阵集合和正定矩阵集合
+$$
+S_+^n,S_{++}^n
+$$
+n=1 <span class="arithmatex">\(S_+^1 = \R_+\)</span></p>
+<p>n=2，写成
+$$
+S_+^2 = {\begin{pmatrix}x &amp; y\newline y &amp; x \end{pmatrix}|x&gt;0,z&gt;0,xz&gt;zy }
+$$</p>
+<h3 id="_10">保持凸性的操作</h3>
+<ol>
+<li>交集</li>
+<li>仿射函数，m维到n维的线性变换</li>
+</ol>
+<blockquote>
+<p>对应的逆映射也可以保证凸性
+$$
+f^{-1}(S) = {x| f(x)\in S }
+$$
+如果S是凸集那么<span class="arithmatex">\(f^{-1}(S)\)</span>也是凸集</p>
+</blockquote>
+<ol>
+<li>两个凸集的和<span class="arithmatex">\(S_1+S_2 = \{x+y|x\in S_1,y\in S_2 \}\)</span>两个凸集的乘<span class="arithmatex">\(S_1\times S_2 = \{(x,y)|x\in S_1,y\in S_2 \}\)</span>(先仿射变换，再相加)</li>
+<li>线性矩阵不等式</li>
+</ol>
+<div class="arithmatex">\[
+A_i,x_i,B\in S^m(对称矩阵)\newline
+A(x) = x_1 A +\cdots + x_n A_n \preceq B\to (A(x)-B)\preceq 0（半正定）
+\]</div>
+<p>则集合
+$$
+{x|A(x)\preceq B }
+$$
+为凸集</p>
+<blockquote>
+<p>定义仿射变换
+$$
+f(x) = B - A (x)
+$$
+输入是n个对称m维矩阵，输出一个m维对称矩阵(n维空间映射到1维空间，每个元素是一个对称矩阵)，<span class="arithmatex">\(S_+^m\)</span>是凸集，则它的逆变换
+$$
+f^{-1}(S_+^m) = {x|B-A(x)\succeq 0 }
+$$
+<span class="arithmatex">\(f^{-1}(S_+^m)\)</span>是凸集，因为<span class="arithmatex">\(f\)</span>是仿射变换，得证</p>
+</blockquote>
+<ol>
+<li>椭球是球的仿射映射</li>
+</ol>
+<blockquote>
+<p>定义椭球
+$$
+\epsilon ={x|(x-x_c)^T P^{-1} (x-x_c)\leq 1 },P\succeq 0
+$$
+定义仿射变换
+$$
+f(u) = p^{1/2} u+x_c\newline
+\parallel u \parallel \leq 1\newline
+P^{1/2}P^{1/2}= P
+$$
+u表示一个球形空间
+$$
+\begin{aligned}
+{f(u)|\parallel u\parallel \leq 1 }&amp; = {p^{1/2} u +x_c|\parallel u \parallel \leq 1 }\newline
+&amp;={x|\parallel p^{1/2} (x-x_c)\parallel \leq 1 }(u = p^{-1/2} (x-x_c))\newline
+&amp;= {x|(x-x_c)^T P^{-1} (x-x_c)\leq 1 }
+\end{aligned}
+$$
+</p>
+</blockquote>
+<ol>
+<li>透视函数</li>
+</ol>
+<div class="arithmatex">\[
+f:\R^{n+1}\to \R^{n}
+\]</div>
+<p>它定义在
+$$
+P = \R^n \times R_{++}
+$$
+第n+1维必须是正实数，定义为
+$$
+P(z,t) = \frac{z}{t},z\in \R^n ,t\in R_{++}
+$$
+透过原点<strong>消灭</strong>一个维度看到的坐标取负</p>
+<p>透视函数是保证集合的凹凸性</p>
+<blockquote>
+<p>考虑<span class="arithmatex">\(\R^{n+1}\)</span>中的线段
+$$
+x= (\overline x,x_{n+1})\newline
+y = (\overline y,y_{n+1})\newline
+\overline x,\overline y\in \R^{n},x_{n+1},y_{n+1}\in R_{++}
+$$
+线段经过透视函数得到n维线段
+$$
+P(\theta x+(1-\theta y)) = \frac{\theta \overline x+(1-\theta)\overline y}{\theta x_{n+1}+(1-\theta )y_{n+1}}\newline
+=\frac{\theta x_{n+1}}{\theta x_{n+1} + (1-\theta) y_{n+1}} \frac{\overline x}{x_{n+1}} + \frac{(1-\theta)y_{n+1}}{\theta x_{n+1} + (1-\theta) y_{n+1}} \frac{\overline y}{y_{n+1}}\newline
+=\mu P(x)+(1-\mu) P(y)
+$$</p>
+<p>任意凸集的反透视都是凸集，定义反透视
+$$
+P^{-1}(C) = {(x,t)\in \R^{n+1}|\frac{x}{t}\in C,t\geq 0 }
+$$
+只要C是凸集，则<span class="arithmatex">\(P^{-1}(C)\)</span>仍然是凸集</p>
+</blockquote>
+<ol>
+<li>线性分数函数(先线性，再仿射)</li>
+</ol>
+<div class="arithmatex">\[
+g:\R^n \to \R^{m+1}
+\]</div>
+<p>为仿射映射，写成
+$$
+g(x) = \begin{pmatrix} A\newline C^T \end{pmatrix} x + \begin{pmatrix} b \newline d\end{pmatrix}\newline
+A\in \R^{m\times n},C\in \R^n
+$$</p>
+<p>实际上是线性变换</p>
+<p>定义透视变换
+$$
+P: \R^{m+1}\to \R^m
+$$
+定义线性分数函数
+$$
+f:\R^n \to \R^m = P \odot g
+$$
+实际上写成
+$$
+f(x) = \frac{Ax+b}{c^T x +d},dom f = {x|c^T x+d }
+$$
+任意凸集经过两次变换后还是凸集(两个变换都是保凸的)</p>
+<ol>
+<li>两个随机变量的联合概率映射为条件概率</li>
+</ol>
+<p>随机变量<span class="arithmatex">\(u=1,2,\cdots,n,v=1,2,\cdots,m\)</span>，概率定义为
+$$
+p_{ij} = P(u=i,v=j)\newline
+f_{ij} = P(u=i|v=j) = \frac{p_{ij}}{\sum_{k=1}^n p_{kj}}
+$$
+条件概率是线性分数映射，假设
+$$
+x = (p_{1j},\cdots p_{2j},\cdots,p_{nj})\in \R^n
+$$
+A可以看成
+$$
+A =(0,0,\cdots,1,\cdots,0)\newline
+c = (1,1,\cdots,1)
+$$
+现在考虑联合概率是否为凸的，定义集合
+$$
+C = {p|\exists \ i,j,s.t\ p_{ij}  = p }
+$$
+对于离散情况应该不成立？</p>
+<h3 id="_11">凸函数的延拓</h3>
+<div class="arithmatex">\[
+f = \left\{
+\begin{aligned}
+&amp;f(x),x\in dom f\newline
+&amp;\infty ,x\notin dom f
+\end{aligned}
+\right.
+\]</div>
+<h3 id="_12">集合的示性函数是凸函数</h3>
+<p>定义凸集<span class="arithmatex">\(C\in \R^n\)</span>是凸集
+$$
+f_c(x)=\left{
+\begin{aligned}
+&amp;\infty ,x\notin C\newline
+&amp; 0,x\in C
+\end{aligned}
+\right.
+$$
+必须是<span class="arithmatex">\(\infty\)</span>，如果是有限值则不能保证凹凸性</p>
+<h3 id="_13">凸函数的一阶条件</h3>
+<p>若<span class="arithmatex">\(f:\R^n \to \R\)</span>可微，<span class="arithmatex">\(\nabla f\)</span>在<span class="arithmatex">\(dom f\)</span>上存在(f必须定义在开集上)，f是凸函数等价于满足</p>
+<ol>
+<li>dom f是凸集</li>
+<li><span class="arithmatex">\(f(y)\geq f(x)+\nabla f(x)^T (y-x),\forall x,y\in dom f\)</span></li>
+</ol>
+<blockquote>
+<p>如果<span class="arithmatex">\(\exists x_0,s.t \ \nabla f(x_0) = 0\)</span>，则
+$$
+\forall y,f(y)\geq f(x_0)
+$$</p>
+</blockquote>
+<h3 id="_14">映射凸函数到低维(曲面映射到曲线)</h3>
+<div class="arithmatex">\[
+\forall x\in dom f,\forall v,g(t) = f(x+tv)
+\]</div>
+<p>为凸，g定义在
+$$
+dom  g= {t|x+tv\in dom f }
+$$
+显然如果<span class="arithmatex">\(dom f\)</span>凸，则dom g凸</p>
+<blockquote>
+<p><span class="arithmatex">\(\forall x,y\in dom f,v= y-x\)</span>，define
+$$
+g(t) = f(x+t(y-x))
+$$
+<span class="arithmatex">\(g(0) = f(x),g(1) = f(y)\)</span>。Q.E.D</p>
+<p>证明高维凸函数的一阶条件，convex <span class="arithmatex">\(\to\)</span>一阶条件
+$$
+f(y)\geq f(x)+\nabla f(x)^T (y-x) 
+$$
+定义
+$$
+g(t) = f(ty+(1-t)x) = f(x+t(y-x))
+$$
+<span class="arithmatex">\(g(t)\)</span>是凸函数
+$$
+g^\prime(t) = \nabla f^T(x+t(y-x))(y-x)
+$$
+则
+$$
+g(1) = f(y)\newline
+\nabla g(0) = \nabla f^T(x)\newline
+g(0) =f(x)
+$$
+则
+$$
+g(1)\geq g(0)+\nabla g(0)
+$$
+在dom f中找两个点
+$$
+a= x + t(y-x )\in dom f\quad
+b=x+\overline t(y-x) \in \dim f
+$$
+f满足一阶条件，写成
+$$
+f(a)\geq f(b) +\nabla f(b)(a-b)\newline
+f(x+t(y-x))\geq f(x+\overline t(y-x)) + \nabla ^T f(x+\overline t(y-x))(y-x)(t-\overline t)
+$$
+带入<span class="arithmatex">\(g(t)\)</span></p>
+<p>拆分成
+$$
+g(t)\geq \nabla g(\overline t)(t-\overline t) + g(\overline t)
+$$
+x,y任意选择，根据第二个条件的任意性得证</p>
+</blockquote>
+<h3 id="_15">二阶条件</h3>
+<p>二阶hessian矩阵半正定(等价条件)
+$$
+\nabla ^2 f(x)\succeq 0
+$$</p>
+<blockquote>
+<p>如果Hessian矩阵是正定的，则它严格凸(整个结论反命题并不一定成立！<span class="arithmatex">\(f(x)=x^4\)</span>)</p>
+</blockquote>
+<p>需要保证定义在凸集上，比如
+$$
+f(x) = \frac{1}{x^2}
+$$</p>
+<h3 id="_16">范数</h3>
+<h4 id="0-">0-范数(刻画向量的稀疏程度)</h4>
+<p><span class="arithmatex">\(x\in \R^n,\parallel x\parallel_0\)</span>是x中非零元素数量，对于n=1，写成
+$$
+\parallel x\parallel_0 =\left{
+\begin{aligned}
+&amp; 0 \quad x=0\newline
+&amp; 1 \quad x\neq 0
+\end{aligned}
+\right.
+$$
+但是它显然不满足凸函数，因为不满足
+$$
+\parallel x + y\parallel\leq \parallel x\parallel +\parallel y\parallel
+$$</p>
+<h3 id="_17">极大值</h3>
+<div class="arithmatex">\[
+f(x) = \max\{x_1,x_2,\cdots,x_n \}
+\]</div>
+<p>验证其凹凸性，一定有
+$$
+\max{x+y}\leq \max  x+ \max y
+$$</p>
+<h4 id="_18">极大极小问题</h4>
+<div class="arithmatex">\[
+\min_x \max_y f(x,y)
+\]</div>
+<h3 id="log-sum-up">不可导函数的解析逼近(log-sum-up)</h3>
+<p>定义
+$$
+f(x) = \log {\sum_{i=1}^n e^{x_i}},x\in \R^n
+$$
+一定有
+$$
+\max{x_1,x_2,\cdots,x_n }\leq f(x)\leq \max{ x_1,x_2,\cdots,x_n}+ \log n
+$$
+对<span class="arithmatex">\(f(x)\)</span>求偏导
+$$
+\frac{\partial f}{\partial x_i} = \frac{e^{x_i}}{\sum_{j=1}^n e^{x_j}}\newline
+\frac{\partial^2 f}{\partial x_i \partial x_j} = H=(h_{ij})<em>{i=1,j=1}^{n,n}
+$$
+定义
+$$
+z = [e^{x_1},e^{x_2},\cdots,e^{x_n}]
+$$
+于是Hessian矩阵写成
+$$
+h</em>{ij} = \left{
+\begin{aligned}
+&amp; -\frac{e^{x_i+x_j}}{\parallel z\parallel_1^2},\quad i\neq j\newline
+&amp; \frac{-e^{2x_i}+e^{x_1}\parallel z\parallel_1}{\parallel z\parallel_1^2},\quad i=j
+\end{aligned}
+\right.\newline
+\parallel z \parallel_1 = 1^T z
+$$</p>
+<p>Hessian矩阵写成
+$$
+H = \frac{1}{\parallel z\parallel_1^2}(diag(e^{x_i}(\sum_{j=1}^n e^{x_j})) - \begin{pmatrix}
+e^{x_1}\newline
+e^{x_2}\newline
+\cdots \newline
+e^{x_n}
+\end{pmatrix}\begin{pmatrix}
+e^{x_1},e^{x_2},\cdots,e^{x_n}
+\end{pmatrix})=\frac{1}{\parallel z\parallel_1^2}(\parallel z\parallel_1^2 diag(z) - z z^T)=\frac{1}{\parallel z\parallel_1^2}K
+$$
+K是否为半正定？<span class="arithmatex">\(\forall v\in \R^n\)</span>
+$$
+v^T K v = \sum_{i=1} z_i \sum_i v_i^2 z_i - (\sum_i v_i z_i)^2
+$$
+定义
+$$
+a_i = v_i \sqrt{z_i},b_i = \sqrt{z_i}\newline
+$$
+写成
+$$
+v^T K v = (b^T b)(a^T a) - (a^T b)^2\geq0
+$$
+Cauchy-Schwartz不等式
+$$
+\lang a,b\rang ^2 \leq \lang a,a\rang\lang b,b\rang
+$$</p>
+<h3 id="_19">行列式的对数</h3>
+<div class="arithmatex">\[
+f(x) = \log \det (X),X\in S_{++}^n
+\]</div>
+<p>X的特征值为<span class="arithmatex">\(\lambda_1,\lambda_2,\cdots,\lambda_n&gt; 0\)</span>，满足
+$$
+f(x) =\sum_{i=1}^n \log \lambda_i
+$$
+只需要证明
+$$
+\forall z\in S_{++}^n ,v\in\R^{n\times n},\forall t\in R\newline
+z+tv\in S_{++}^n,g(t) = f(z+tv)
+$$
+是凹函数，可知<span class="arithmatex">\(v\in S_{++}^n\)</span>，于是有
+$$
+g(t) = \log \det (z^{1/2}(I+t z^{-1/2} v z^{-1/2}) z^{1/2})=2\log \det {z^{1/2}}+\log\det(I+t z^{-1/2} vz^{-1/2})
+$$
+假设<span class="arithmatex">\(\lambda_i\)</span>为<span class="arithmatex">\(P =z^{-1/2}v z^{-1/2}\)</span>的特征值，写成
+$$
+g(t) = \log \det (z) + \sum_{i=1}^n \log (1+t\lambda_i)
+$$
+P是对称矩阵(多个对称矩阵乘积)，因此可以进行正交变换
+$$
+P = Q\Lambda Q^T,QQ^T = I
+$$</p>
+<p>考虑微分
+$$
+g^\prime(t) = \sum_{i=1}^n \frac{\lambda_i}{1+t\lambda_i}\newline
+g^{\prime\prime}(t) =-\sum_{i=1}^i \frac{\lambda_i^2}{(1+t\lambda_i)^2}\leq 0
+$$</p>
+<h3 id="operations-that-conserve-convex">Operations that conserve convex</h3>
+<h4 id="_20">非负加权和</h4>
+<div class="arithmatex">\[
+\sum_{i=1}^n w_i f_i,w_i\geq 0
+\]</div>
+<h4 id="_21">积分</h4>
+<p>若<span class="arithmatex">\(f(x,y),\forall x\in A\)</span>，都有<span class="arithmatex">\(f(x,y)\)</span>都是凸函数(并不一定对(x,y)joint convex)，假设
+$$
+w(y)\geq 0,\forall y\in A(A不一定是凸集)
+$$
+定义
+$$
+g(x) =\int_{y\in A}w(y)f(x,y) dy 
+$$
+为凸</p>
+<h4 id="_22">仿射映射</h4>
+<p><span class="arithmatex">\(f(\R^n \to R),A\in \R^{m\times n},b\in \R^n\)</span>，定义
+$$
+g(x) = f(Ax+b)
+$$
+在<code>dom g</code>上是凸的</p>
+<blockquote>
+<p>仿射映射保证<code>dom g</code>是凸集</p>
+</blockquote>
+<p><span class="arithmatex">\(f_i(\R^n \to \R),i=1,2,\cdots,m\)</span>为凸，<span class="arithmatex">\(A\in \R^{n},b\in \R\)</span>，定义
+$$
+g(x) = A^T [f_1(x),f_2(x),\cdots,f_m(x)]^T +b
+$$
+<strong>不一定保证凸</strong>，必须要限制<strong>A&gt;0</strong></p>
+<h4 id="max">max函数</h4>
+<div class="arithmatex">\[
+f(x) =\max (f_1(x),f_2(x))
+\]</div>
+<blockquote>
+<p>向量<span class="arithmatex">\(x\in \R^n\)</span>中r个最大元素的和
+$$
+f(x) = \sum_{i=1}^r x^i
+$$
+定义<span class="arithmatex">\(1_n^r\)</span>表示n维向量，其中包含r个1，剩下位置是0，显然有
+$$
+C_n^r
+$$
+个<span class="arithmatex">\(1_n^r\)</span>向量，写成
+$$
+f(x )=\max 1_n^r x
+$$
+因此这是凸函数</p>
+<p>实对称矩阵的最大特征值(奇异值分解，主方向)
+$$
+f(x) =\lambda_{\max}(X),dom f= S^m
+$$
+特征值满足
+$$
+X y = \lambda y
+$$
+可以写成
+$$
+f(X) = \max_{\parallel v\parallel =1} v ^T X  v
+$$
+因此凸</p>
+</blockquote>
+<h4 id="_23">函数的函数</h4>
+<div class="arithmatex">\[
+f(x) = h(g(x))
+\]</div>
+<p><span class="arithmatex">\(f(x),h(x)\)</span>均为convex function，讨论<span class="arithmatex">\(g(x)\)</span>的凹凸性(一维，可微)</p>
+<div class="arithmatex">\[
+f^{\prime\prime}(x) = h^{\prime\prime}(g(x)) g^\prime(x)^2 + h^\prime(g(x))g^{\prime\prime}(x)
+\]</div>
+<ol>
+<li><span class="arithmatex">\(h\)</span>是凸函数且不降，g为凸函数，则f为凸函数</li>
+<li>h为凸函数，不增，g为凹函数，则f为凸函数</li>
+</ol>
+<p>讨论
+$$
+h(x) = -\log x,x\in R_{++}
+$$
+并将其延拓到<span class="arithmatex">\(\R\)</span>
+$$
+\overline h(x) = \left{
+\begin{aligned}
+&amp; -\log x,x\in R_{++}\newline
+&amp;\infty ,else
+\end{aligned}
+\right.
+$$</p>
+<ol>
+<li><span class="arithmatex">\(h\)</span>为凸,<span class="arithmatex">\(\overline h\)</span>不降，g凸，则f为凸</li>
+<li>h为凸,<span class="arithmatex">\(\overline h\)</span>增，g凹，则f为凸</li>
+</ol>
+<blockquote>
+<p><span class="arithmatex">\(\forall x,y\in domf ,0\leq\theta \leq 1 <span class="arithmatex">\(，g为凸，因此\)</span>dom g\)</span>是凸的，<span class="arithmatex">\(\theta x+(1-\theta)y\in dom \ g\)</span>，并且
+$$
+g(x),g(y)\in dom h
+$$
+因为g是凸的
+$$
+g(\theta x+(1-\theta)y)\leq \theta g(x)+(1-\theta)g(y)
+$$
+h为凸的，因此
+$$
+\theta g(x) + (1-\theta )g(y)\in dom h\newline
+h(\theta g(x) + (1-\theta )g(y))\leq \theta h(g(x)) + (1-\theta) h(g(y))=\theta f(x)+(1-\theta) f(y)
+$$
+同时在(99)两边都加上h，得到
+$$
+h(g(\theta x+(1-\theta)y))\leq h( \theta g(x)+(1-\theta)g(y))
+$$
+这个式子不是显然的，因为不能确定<span class="arithmatex">\(g(\theta x +(1-\theta )y)\in dom h\)</span></p>
+<p>因此需要对h进行延拓，所以(101)总是成立</p>
+<p><span class="arithmatex">\(g\)</span>为凸，<span class="arithmatex">\(\exp{g(x)}\)</span>为凸</p>
+</blockquote>
+<h4 id="_24">函数的透视</h4>
+<p>定义<span class="arithmatex">\(f(\R^n\to \R)g(\R^n \times \R_{++}\to \R)\)</span>为透视函数，定义为
+$$
+g(x,t) = tf(\frac{x}{t})
+$$
+g定义在
+$$
+dom g = {(x,t) |t&gt;0\quad\frac{x}{t}\in dom f }
+$$
+f是凸，g为凸，f为凹，g为凹</p>
+<blockquote>
+<p><span class="arithmatex">\(\forall (x_1,t_1),(x_2,t_2)\in dom g\)</span>，先证明dom g是凸集，<span class="arithmatex">\(\forall 0\leq \theta \leq 1\)</span>，必然有
+$$
+\frac{x_1}{t_1},\frac{x_2}{t_2}\in dom f
+$$
+</p>
+<p>下面对于<span class="arithmatex">\(\theta \in (0,1)\)</span>，构造凸组合
+$$
+x = \theta x_1 + (1-\theta ) x_2\newline
+t = \theta t_1 + (1-\theta )t_2
+$$
+考虑
+$$
+\frac{x}{t} =\frac{\theta x_1 +(1-\theta)x_2 }{\theta t_1+(1-\theta)t_2}
+$$
+已知
+$$
+\theta \frac{x_1}{t_1} + (1-\theta )\frac{x_2}{t_2}\in dom f
+$$
+做变形
+$$
+\frac{x}{t} =\frac{\theta t_1}{t}  \frac{x_1}{t_1} + \frac{(1-\theta)t_2}{t}\frac{x_2}{t_2} = \Theta \frac{x_1}{t_1} + (1-\Theta)\frac{x_2}{t_2}
+$$
+因此dom g也是凸集</p>
+<p>现在证明函数的凸性，对于<span class="arithmatex">\(g(x,t)\)</span>，有
+$$
+\begin{aligned}
+g(x,t)&amp; = (\theta t_1 +(1-\theta)t_2 )f(\frac{\theta x_1+(1-\theta)x_2}{\theta t_1 + (1-\theta)t_2})\newline
+&amp;\leq (\theta t_1 + (1-\theta )t_2) (\frac{\theta t_1}{t} f(\frac{x_1}{t_1})+\frac{(1-\theta )t_2}{t}f(\frac{x_2}{t}))\newline
+&amp;\leq \theta g(x_1,t_1) + (1-\theta)g(x_2,t_2)
+\end{aligned}
+得证
+$$</p>
+</blockquote>
+<p>例子：范数平方</p>
+<blockquote>
+<p><span class="arithmatex">\(f(x) = x^T x,dom f = \R^n\)</span>,定义
+$$
+g(x,t)=\frac{x^T x}{t}
+$$
+对<span class="arithmatex">\((x,t)\)</span>联合凸</p>
+</blockquote>
+<p>例子：负对数</p>
+<blockquote>
+<p><span class="arithmatex">\(f(x) = -\log x,dom f = R_{++}\)</span>
+$$
+g(x,t) = t(-\log \frac{x}{t}) = t \log \frac{t}{x}
+$$
+实际上是交叉熵，进一步考虑
+$$
+g(u,v) = \sum_{i=1}^n u_i \log \frac{u_i}{v_i} = \sum_{i=1}^n g(u_i,v_i)
+$$
+不能直接使用非负加权和的性质判断，因为不同函数实际上对应相同变量</p>
+</blockquote>
+<p>扩展到Bregman Divergence，定义为
+$$
+D_B(u,v) = f(u) - f(v)-\nabla f(v)(u-v)
+$$
+当<span class="arithmatex">\(f(x) = \sum_{i=1}^n x_i \log x_i -\sum_{i=1}^n x_i\)</span>时，<code>Bregman</code>退化为KL散度，实际上不能保证凸性</p>
+<h4 id="_25">函数的共轭</h4>
+<p>对于复数共轭的推广，假设<span class="arithmatex">\(f(\R^n \to \R),\)</span>定义它的共轭为<span class="arithmatex">\(f^*\)</span>，满足
+$$
+f^*(y) = \sup_{x\in dom f}(y^T x- f(x))
+$$
+对于n=1，<span class="arithmatex">\(y^Tx\)</span>可以看成斜率为y的过原点直线在x处取值</p>
+<blockquote>
+<ol>
+<li>若<span class="arithmatex">\(f(x)\)</span>可微，则<span class="arithmatex">\(f^*(y)\)</span>对应的x满足<span class="arithmatex">\(f^\prime(x) = y\)</span>(直线和某点处曲线的切线平行)</li>
+<li><span class="arithmatex">\(f(x)\)</span>无论是否为凸函数，<span class="arithmatex">\(f^*(y)\)</span>必然是凸函数(多个线性函数的最大值)，实际上<span class="arithmatex">\(f^*(y)\)</span>是分段线性函数</li>
+</ol>
+<p>关于函数扩展单调性的讨论(为何需要对h进行扩展)，对于<span class="arithmatex">\(f:h\odot g\)</span>
+$$
+g(x)=x^2,dom g \in \R\newline
+h(z) = 0,dom z = [0,1]
+$$
+h(z)是凸函数，并且不增不降，现在考虑复合函数
+$$
+\overline h(g(x)) = \begin{aligned}
+&amp;0,x\in [-\sqrt 2,-1]\bigcup [1,\sqrt 2]\newline
+&amp;not define
+\end{aligned}
+$$
+显然这个函数没有凹凸性，因为定义域不是convex set，因此对于复合函数<span class="arithmatex">\(f = h\odot g\)</span></p>
+<p><strong>需要保证h的扩展在全集上的单调性，才能判断复合函数的单调性</strong></p>
+<p><span class="arithmatex">\(g(x)\geq 0\)</span>为凸，则<span class="arithmatex">\(g^p(x),p\geq 1\)</span>是凸的</p>
+<blockquote>
+<p>定义<span class="arithmatex">\(h(z)\)</span>
+$$
+h(z)=\begin{aligned}
+&amp;z^p,z\geq 0\newline
+&amp;0,z&lt;0
+\end{aligned}
+$$
+现在考虑复合函数<span class="arithmatex">\(h(g(x))\)</span>，满足</p>
+<ol>
+<li>g(x)为凸</li>
+<li><span class="arithmatex">\(h(z)\)</span>全局增</li>
+</ol>
+<p>因此复合函数是凸函数</p>
+</blockquote>
+<p>计算函数的对偶
+$$
+f(x)= ax+b
+$$
+对偶是
+$$
+f^*(y) = \sup_{x\in dom f} (yx -(ax+b))=\left{
+\begin{aligned}
+&amp; -b,y=a\newline
+&amp; \infty,else
+\end{aligned}
+\right.</p>
+<div class="arithmatex">\[
+考虑对数函数
+$$
+f(x)=-\log x,x\in R_{++}
+\]</div>
+<p>$$
+f^<em>(y) = \sup_{x&gt; 0}(yx+\log x)\newline
+y+\frac{1}{x} = 0\to x=-\frac{1}{y} \newline
+f^</em>(y) = \left{
+\begin{aligned}
+&amp;-1-\log -y, y&lt;0\newline
+&amp;\infty,y\geq 0
+\end{aligned}
+\right.
+$$
+考虑二次函数
+$$
+f(x)= \frac{1}{2}x^T Q x,Q\in S_{++}^n
+$$
+计算
+$$
+f^<em>(y) =\sup_x (y^T x-\frac{1}{2}x^T Qx)
+$$
+计算
+$$
+\frac{\partial y^T x-\frac{1}{2}x^T Qx }{\partial x}= y -Qx
+$$
+得到
+$$
+x = Q^{-1}y,Q^{-1}\in S_{++}^n \newline
+f^</em>(y) = y^T Q^{-1} y - \frac{1}{2} y^T Q^{-1} y =\frac{1}{2} y^T Q^{-1}y
+$$
+它的共轭仍然是二次项</p>
+<p>一个复数<span class="arithmatex">\(a+bj\)</span>的共轭是<span class="arithmatex">\(a-bj\)</span>，满足<span class="arithmatex">\(\overline {\overline z}=z\)</span>，考虑函数共轭的共轭，显然没有
+$$
+f^{**} = f
+$$
+因为共轭的共轭都是凸函数，如果约定f是凸函数并且f是闭函数，则共轭的共轭是其自身</p>
+</blockquote>
+<h3 id="_26">凸集和凸函数</h3>
+<p><span class="arithmatex">\(\alpha-\)</span>sub level set</p>
+<blockquote>
+<p>若<span class="arithmatex">\(f(\R^n \to \R)\)</span>定义其<span class="arithmatex">\(\alpha-sublevel\)</span> set \
+$$
+C_{\alpha} = {x\in dom f|f(x)\leq \alpha }
+$$</p>
+</blockquote>
+<p>性质：凸函数的所有<span class="arithmatex">\(\alpha-\)</span>sublevel set都是凸集</p>
+<blockquote>
+<p>反之不一定成立：如果函数的所有<span class="arithmatex">\(\alpha-\)</span>sublevel set都是凸集，则它不一定是凸函数<span class="arithmatex">\(f(x)=-e^x\)</span></p>
+</blockquote>
+<p>考虑<span class="arithmatex">\(f(\R^2\to \R)\)</span>的<span class="arithmatex">\(\alpha-\)</span>sublevel set <span class="arithmatex">\(f(x_1,x_2)=x^T x\)</span>，<span class="arithmatex">\(\alpha-\)</span>sublevel set满足
+$$
+x_1^2+x_2^2\leq \alpha
+$$</p>
+<h3 id="quasi-convex-function">Quasi Convex function</h3>
+<p>所有<span class="arithmatex">\(\alpha\)</span>-sublevel set都是凸的函数</p>
+<blockquote>
+<div class="arithmatex">\[
+f(x)=\left\{
+\begin{aligned}
+&amp; \sqrt x,x\geq 0\newline
+&amp; \sqrt {-x},x\leq 0
+\end{aligned}
+\right.
+\]</div>
+</blockquote>
+<p>Quasi Convex定义为
+$$
+S_\alpha = {x\in dom f|f(x)\leq \alpha }
+$$
+convex <span class="arithmatex">\(\forall \alpha \in \R\)</span></p>
+<p>同样定义Quasi Concave
+$$
+S_\alpha^\prime = {x\in dom f|f(x)\geq \alpha }
+$$
+对于<span class="arithmatex">\(\forall \alpha \in \R\)</span>是convex的</p>
+<p>定义Quasi linear
+$$
+S_\alpha^{\prime \prime}={x\in dom f|f(x)=\alpha }
+$$
+是凸集</p>
+<p>Quasi convex优化起来比较容易，尽管不能用convex function方法分析</p>
+<p>拟凸下，有
+$$
+\forall x,y\in dom f,\max(f(x),f(y))\geq f(\theta +(1-\theta(y)))
+$$</p>
+<blockquote>
+<p>向量<span class="arithmatex">\(x\in \R^n\)</span>的长度，定义为x中最后一个非零元素的个数
+$$
+f(x)=\left{
+\begin{aligned}
+&amp; \max_{i,x_i\neq 0} i,x\neq 0\newline
+&amp; 0,x=0
+\end{aligned}
+\right.
+$$
+<span class="arithmatex">\(f(x)\)</span>是拟凸函数，对于它的<span class="arithmatex">\(\alpha-\)</span>sublevel set
+$$
+f(x)\leq \alpha \to x_{\alpha+1},x_{\alpha+2},\cdots,x_{n} = 0
+$$
+显然是凸集</p>
+<p>线性分数函数
+$$
+f(x) =\frac{a^Tx+b}{c^T x+d}\newline
+dom f = {x|c^T x+d &gt;0 }
+$$
+是拟凸的
+$$
+S_\alpha \to {x|c^T x+d &gt;0,a^T x+b \leq \alpha (c^T x+d) }
+$$
+多面体一定是凸集</p>
+<div class="arithmatex">\[
+f(x) = (x_1x_2\cdots x_n)^{\frac{1}{n}}在\R_{++}^n\bigcap \{\parallel R\parallel _2\leq 1\}上是凸函数
+\]</div>
+</blockquote>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Convex-Optimization-Introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Convex Optimization Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Convex Optimization Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../KKTcondition/" class="md-footer__link md-footer__link--next" aria-label="Next: KKTcondition" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              KKTcondition
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [{"login": null, "password": "admin", "username": "admin"}], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

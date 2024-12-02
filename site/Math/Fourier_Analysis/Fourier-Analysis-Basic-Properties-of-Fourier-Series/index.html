@@ -1,0 +1,2084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gaohomepage.github.io/Math/Fourier_Analysis/Fourier-Analysis-Basic-Properties-of-Fourier-Series/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Fourier Analysis(Basic Properties of Fourier Series) - Gao's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fourier-analysischapter-2-basic-properties-of-fourier-series" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-header__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fourier Analysis(Basic Properties of Fourier Series)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-nav__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Gao's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Paper-List/" class="md-nav__link">
+        Paper List
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chinese_version/" class="md-nav__link">
+        Chinese version
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Artificial Intelligence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Artificial Intelligence" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Artificial Intelligence
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          Generative model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Generative model" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Generative model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/DALLE/" class="md-nav__link">
+        DALLE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/Diffusion/" class="md-nav__link">
+        Diffusion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Multimodal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Multimodal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Multimodal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/ALBEF-and-BLIP/" class="md-nav__link">
+        ALBEF and BLIP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Object-Detection-via-Prompt-Learning/" class="md-nav__link">
+        Object Detection via Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Visual-Language-Model-CLIP-and-Prompt-Learning/" class="md-nav__link">
+        Visual Language Model:CLIP and Prompt Learning
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Cycle-Self-Training/" class="md-nav__link">
+        Cycle Self-Training
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/VQ-VAE/" class="md-nav__link">
+        VQ-VAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Variation_Inference/" class="md-nav__link">
+        GMM EM VI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Robotics Embodiedai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Robotics Embodiedai" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Robotics Embodiedai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/CLIP4EmbodiedAI/" class="md-nav__link">
+        CLIP4EmbodiedAI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/IROS-Paper-Reading-Object-Centric-3D-Representation/" class="md-nav__link">
+        IROS Paper Reading Object Centric 3D Representation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Vision
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Vision" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Vision
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Contrast-and-Self-Supervised-Learning/" class="md-nav__link">
+        Contrast and Self-Supervised Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/MAE/" class="md-nav__link">
+        MAE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Moco/" class="md-nav__link">
+        Moco
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/No-negative-sample-Contrast-Learning/" class="md-nav__link">
+        No negative sample Contrast Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/selective-search-nms/" class="md-nav__link">
+        selective-search-nms
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Computer Graphics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Computer Graphics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Computer Graphics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_Graphics/Computer_Graphics_Basis/" class="md-nav__link">
+        CG Basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Financial Investment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Financial Investment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Financial Investment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Future-Contract-Market/" class="md-nav__link">
+        Financial Future Contract Market
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Intro/" class="md-nav__link">
+        Financial(Intro)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-Macroeconomic/" class="md-nav__link">
+        quat Macroeconomic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-stock-data/" class="md-nav__link">
+        Quat stock data
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Math
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Math" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Math
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          ConvexOptimization
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ConvexOptimization" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          ConvexOptimization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/Convex-Optimization-Convex-Problems/" class="md-nav__link">
+        Convex Optimization Convex Problems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/Convex-Optimization-Introduction/" class="md-nav__link">
+        Convex Optimization Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/Convex-Optimization-set-and-functions/" class="md-nav__link">
+        Convex Optimization:set and functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/KKTcondition/" class="md-nav__link">
+        KKTcondition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/Quasi-function/" class="md-nav__link">
+        Quasi function
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/duality-explain/" class="md-nav__link">
+        duality explain
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/duality-review/" class="md-nav__link">
+        duality review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/optimization-method/" class="md-nav__link">
+        optimization method
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ConvexOptimization/sensitive-analysis/" class="md-nav__link">
+        sensitive-analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Fourier Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fourier Analysis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fourier Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fourier Analysis(Basic Properties of Fourier Series)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fourier Analysis(Basic Properties of Fourier Series)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourier-coefficient" class="md-nav__link">
+    Fourier Coefficient
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier Coefficient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-in-a-circle" class="md-nav__link">
+    Functions in a circle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    傅里叶级数的收敛性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniqueness-of-fourier-series" class="md-nav__link">
+    Uniqueness of Fourier Series
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一致收敛性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothness-and-decay" class="md-nav__link">
+    Smoothness and Decay
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    卷积
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fourier-Analysis-Chapter-2-Overview/" class="md-nav__link">
+        Fourier Analysis Chapter 2 Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fourier-Analysis-Chapter-3-Convergence/" class="md-nav__link">
+        Fourier Analysis Chapter 3 Convergence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fourier-Analysis-Intro/" class="md-nav__link">
+        Fourier_Analysis_Intro
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Information Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Information Theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Information Theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Data-Transmission-Inequality/" class="md-nav__link">
+        Data Transmission Inequality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Element-of-Information-Chapter-2/" class="md-nav__link">
+        Element of Information(Chapter 2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Entropy-and-Channel-Capacity/" class="md-nav__link">
+        Entropy and Channel Capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Measures-of-Discrete-Systems/" class="md-nav__link">
+        Information Measures of Discrete Systems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-AEP/" class="md-nav__link">
+        Information Theory AEP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Divergence-and-variational-distance/" class="md-nav__link">
+        Information Theory(Divergence and variational distance)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Mathematical-Basic-and-Introduction/" class="md-nav__link">
+        Information Theory:Mathematical Basic and Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Others
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Others" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Others
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/optimize-transport/" class="md-nav__link">
+        optimize transport
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Open Courses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Open Courses" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Open Courses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          CMU15445
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CMU15445" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          CMU15445
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/CMU15445/CMU15445-24-lab0/" class="md-nav__link">
+        CMU15445_24_lab0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_2">
+          NJU OS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="NJU OS" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          NJU OS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-Parallel-Programming/" class="md-nav__link">
+        NJU OS Parallel Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-mutex/" class="md-nav__link">
+        NJU OS mutex
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="System" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          System
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/Objective-File/" class="md-nav__link">
+        Objective File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" type="checkbox" id="__nav_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_2">
+          Cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cpp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/cpp/Cpp-diamond-hierarchy/" class="md-nav__link">
+        Cpp diamond hierarchy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Tech Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tech Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tech Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/PytorchNLLloss/" class="md-nav__link">
+        PytorchNLLloss
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/Singularity-Intro/" class="md-nav__link">
+        Singularity Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/ssh-forward/" class="md-nav__link">
+        ssh forward
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fourier-coefficient" class="md-nav__link">
+    Fourier Coefficient
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier Coefficient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-in-a-circle" class="md-nav__link">
+    Functions in a circle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    傅里叶级数的收敛性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniqueness-of-fourier-series" class="md-nav__link">
+    Uniqueness of Fourier Series
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    一致收敛性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothness-and-decay" class="md-nav__link">
+    Smoothness and Decay
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    卷积
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="fourier-analysischapter-2-basic-properties-of-fourier-series">Fourier Analysis(Chapter 2: Basic Properties of Fourier Series)</h1>
+<h2 id="definition">Definition</h2>
+<h3 id="fourier-coefficient">Fourier Coefficient</h3>
+<p>形如
+$$
+a_n =\frac 1 L \int_0^L f(x) e^{-2\pi i n x/L } dx
+$$
+的系数称为傅里叶系数，这是因为
+$$
+f(x) = \sum_{n=-\infty}^\infty a_n e^{2\pi i n x/L} dx
+$$
+对于<span class="arithmatex">\(\forall m\neq n\in N\)</span>，有
+$$
+\int_0^L e^{\frac{2\pi i x(m - n)}{L}} dx  = \int_0^L \cos \frac{2\pi x(m-n)}{L} dL  + i\int _0^L \sin \frac{2\pi x(m-n)}{L} dx = 0
+$$
+这里<span class="arithmatex">\(f:\R\to \C\)</span>，f需要在<span class="arithmatex">\([0,L]\)</span>中黎曼可积</p>
+<p>更一般地，一个函数的傅里叶级数写成
+$$
+\sum_{n=-\infty}^\infty \hat f(n) e^{2\pi n i x/L},\hat f( n) =\frac 1 L \int_a^b f(x)e ^{-2\pi i x/L} dx
+$$</p>
+<h4 id="functions-in-a-circle">Functions in a circle</h4>
+<p>周期为<span class="arithmatex">\(2\pi\)</span>的函数<span class="arithmatex">\(f(x)\)</span>，满足
+$$
+\int_a^b f(x) dx =\int_{a+2\pi}^{b+2\pi} f(x) dx  = 0
+$$
+傅里叶系数选择无需考虑区间选择</p>
+<p><span class="arithmatex">\(\sum_{-\infty}^\infty c_n e^{2\pi i n x/L}\)</span>被定义为三角级数</p>
+<h3 id="_1">傅里叶级数的收敛性</h3>
+<p>讨论partial sum
+$$
+S_N =\sum_{n=-\infty}^N c_n e^{i2\pi n x/L}
+$$
+考虑Dirichlet kernel
+$$
+D_N (x) = \sum_{n=-N}^N e^{inx}
+$$
+拆分为
+$$
+\sum_{n=0}^N w^n+\sum_{n=-N}^{-1} w^{-n} = \frac{1 - w^{N+1}}{1 - w}+ \frac{w^{-N} - 1}{1 - w}\
+=\frac{\sin(N+\frac 1 2)x}{\sin \frac x 2}
+\w=e^{ix}
+$$
+对于Poisson kernel
+$$
+P_r(\theta) =\sum_{n=-\infty}^{\infty} r^{|n|} e^{in \theta},\theta\in [-\pi,\pi]
+$$
+对于<span class="arithmatex">\(\forall r\in [0,1]\)</span>一致收敛，这是因为其可以拆分为
+$$
+\sum_{-\infty}^{-1} r^{-n} e^{in\theta} +\sum_{i=0}^\infty r^n e^{in\theta}=\lim_{N\to \infty}\sum_{-N}^{-1} (\frac{e^{i\theta}}{r})^n+\lim_{N\to \infty} \sum_{0}^N{(e^{i\theta}r)}^n=\frac{1-|w|^2}{|1-w|^2},w = re^{i\theta}
+$$
+得到
+$$
+P_r(\theta) =\frac{1 - r^2}{(1 - r\cos\theta)^2  + (r\sin\theta)^2} = \frac{1 -r^2}{1 + r^2 - 2r\cos\theta}
+$$</p>
+<blockquote>
+<p>一致收敛的函数级数可以进行换序，写成
+$$
+\int \sum_i f_i = \sum_i \int f_i
+$$</p>
+<p>一致收敛和逐点收敛的区别在于，前者先确定<span class="arithmatex">\(\epsilon\)</span>和对应的<span class="arithmatex">\(N(\epsilon)\)</span>，对于<span class="arithmatex">\(\forall n &gt; N(\epsilon)\)</span>和<strong>所有在定义域中的x</strong>都有<span class="arithmatex">\(|f_n (x) - f(x)|&lt;\epsilon\)</span>。后者要求对<span class="arithmatex">\(\forall x\)</span>都有<span class="arithmatex">\(\lim_{n\to \infty} f_n(x) = f(x)\)</span>，不同x对应的<span class="arithmatex">\(\epsilon\)</span>是不同的，一致收敛又被记作
+$$
+\lim_{n\to \infty}\sup {|f_n(x) - f(x)|,x\in I} = 0
+$$</p>
+</blockquote>
+<h3 id="uniqueness-of-fourier-series">Uniqueness of Fourier Series</h3>
+<p>两个函数<span class="arithmatex">\(f(x),g(x)\)</span>傅里叶家属相同<span class="arithmatex">\(\hat f(n )= \hat g(n)\)</span>是否一定能够得到<span class="arithmatex">\(f(x)\neq g(x)\)</span></p>
+<blockquote>
+<p>不一定，在某一点不连续并不会影响积分值</p>
+</blockquote>
+<p>给定以下条件，满足</p>
+<blockquote>
+<p>假设<span class="arithmatex">\(f\)</span>是一个在<span class="arithmatex">\(2\pi\)</span>上可积的函数，并且<span class="arithmatex">\(\hat f(n) = 0\)</span>，如果<span class="arithmatex">\(f\)</span>在<span class="arithmatex">\(\theta_0\)</span>处连续，则有
+$$
+f(\theta_0) = 0
+$$
+证明，根据傅里叶系数得到
+$$
+\hat f(n) = 0\Rightarrow \int_{-\pi}^\pi f(\theta) e^{-in \theta} d\theta = 0
+$$
+得到其线性组合（系数为<span class="arithmatex">\(c_n\)</span>）也是0
+$$
+\int_{-\pi}^\pi f(\theta)\sum_n c_n e^{-in \theta} d\theta = 0
+$$
+记求和号内的三角多项式为<span class="arithmatex">\(P_k(\theta)\)</span>，得到
+$$
+\int_{-\pi}^\pi f(\theta)P_k (\theta) d\theta  = 0,P_k(\theta) =\sum_{n=-\infty}^k c_n e^{-in\theta}
+$$
+不妨设<span class="arithmatex">\(\theta_0= 0,f(0)&gt;0\)</span>，由连续的
+$$
+\exists \delta,s.t \forall |x|\leq \delta,f(x) &gt;\frac{f(0)}{2}
+$$
+令
+$$
+p(\theta) = \epsilon + \cos \theta
+$$
+选择一个足够小的<span class="arithmatex">\(\epsilon &gt;0\)</span>，使得，考虑<span class="arithmatex">\(\delta \leq \theta\leq \pi\)</span>这个区间，显然有
+$$
+|p(\theta)|\leq 1 - \frac\epsilon 2
+$$
+另外必然<span class="arithmatex">\(\exist \eta &gt; 0,\eta &lt; \delta\)</span>，满足
+$$
+p(\theta) \geq 1 + \frac \epsilon 2 ,\forall |\theta|&lt;\eta
+$$
+构造一个级数函数
+$$
+p_k(\theta) = [p(\theta)^k]= (\epsilon +\cos\theta)^k
+$$
+这里<span class="arithmatex">\(\epsilon\)</span>不是无穷小，因此<span class="arithmatex">\(\lim_{k\to \infty} p_k(0) = \infty\)</span></p>
+<p>傅里叶系数为0得到
+$$
+\hat f(n) = 0\Leftrightarrow \int_{-\pi}^{\pi}f(\theta)\cos\theta d \theta = 0,\int_{-\pi}^\pi f(\theta) \sin\theta d \theta = 0 
+$$
+因此有
+$$
+\int_{-\pi}^\pi f(\theta) p_k(\theta) d\theta = 0\label{int}
+$$</p>
+<blockquote>
+<p>这是因为<span class="arithmatex">\(p_k(\theta)\)</span>本身可以拆分为三角级数的线性组合</p>
+</blockquote>
+<p>这里对<span class="arithmatex">\(\ref{int}\)</span>进行估计，首先根据连续得到函数有界，即
+$$
+|f(\theta)|\leq B,\forall B\in [-\pi,\pi]
+$$
+因此对于<span class="arithmatex">\(|\theta| \geq \delta\)</span>，有如下bound
+$$
+|\int_{\delta\leq|\theta|} f(\theta)p_k(\theta) d\theta|\leq 2\pi B (1- \frac \epsilon 2)^k(对f(\theta)和p_k(\theta)进行放缩),\forall k
+$$
+对$|\theta|\leq \delta $进行估计，有
+$$
+\int_{\eta\leq |\theta|&lt; \delta} f(\theta)p_k(\theta) d\theta \geq 0（均为非负）
+$$
+同时
+$$
+\int_{|\theta|&lt;\eta}f(\theta)p_k(\theta) d\theta \geq 2 \eta \frac{f(0)}{2}(1 +\frac \epsilon 2)^k
+$$
+显然<span class="arithmatex">\((1 +\frac\epsilon 2)^k - (1 -\frac{\epsilon}{2})^k\)</span>在<span class="arithmatex">\(k\to \infty\)</span>是趋向于<span class="arithmatex">\(\infty\)</span>，得到和<span class="arithmatex">\(\ref{int}\)</span>矛盾的结论</p>
+</blockquote>
+<h3 id="_2">一致收敛性</h3>
+<p>对于定义在圆上的函数<span class="arithmatex">\(f\)</span>，并且<span class="arithmatex">\(\sum_{n =\infty}^{\infty} |\hat f(n)|&lt;\infty\)</span>，此时它的傅里叶级数一致收敛到<span class="arithmatex">\(f(\theta)\)</span>，即
+$$
+\lim_{N\to \infty}S_N(f) = f(\theta),S_N(f) = \sum_{n=-\infty}^N \hat f(n) e^{in\theta},\forall \theta \in [-\pi,\pi]
+$$</p>
+<blockquote>
+<p><span class="arithmatex">\(|\sum_{n=-\infty}^\infty \hat f(n) e^{in\theta}| \leq \sum_{n=-\infty}^\infty |\hat f(n)|&lt;\infty\)</span>，因此<span class="arithmatex">\(S_N(f)\)</span>一致收敛，下面证明收敛到<span class="arithmatex">\(f(\theta)\)</span>，定义<span class="arithmatex">\(g(\theta)\)</span>
+$$
+g(\theta) = \lim_{N\to \infty}\sum_{n =-N}^N \hat f(n) e^{in\theta}
+$$
+显然两个函数的傅里叶级数相等，得到<span class="arithmatex">\(f = g\)</span>(一致收敛求和积分可以换顺序)</p>
+</blockquote>
+<h3 id="smoothness-and-decay">Smoothness and Decay</h3>
+<p>考虑傅里叶系数的阶，对于定义在circle上的二阶可微函数<span class="arithmatex">\(f\)</span>
+$$
+\hat f(n) = O(\frac {1}{|n|^2})\Rightarrow |\hat f(n)|\leq \frac{C}{|n|^2}
+$$</p>
+<blockquote>
+<p><span class="arithmatex">\(n\neq 0\)</span>，有
+$$
+\begin{aligned}
+2\pi \hat f(n)&amp; = \int_0^{2\pi} f(\theta )e^{-in \theta }  d\theta\
+&amp;=\int_0^{2\pi} f(\theta) d {(-\frac{1}{in}e^{-in\theta})} \
+&amp;=-{\frac{f(\theta) e^{-in\theta}}{in}}|_0^{2\pi} - \int _0^{2\pi} f^\prime(\theta)\frac{1}{in} e^{-in\theta} d\theta\
+&amp;=-\frac{1}{in}\int_0^{2\pi} f^\prime (\theta) e^{-in \theta} d \theta \
+&amp;=\frac{1}{(in)^2} \int_0^{2\pi} f^{\prime\prime}(\theta) e^{-in \theta} d\theta
+\end{aligned}
+$$
+再用二阶微分上界bound积分</p>
+</blockquote>
+<p><span class="arithmatex">\(f(\theta)\)</span>和<span class="arithmatex">\(f^\prime(\theta)\)</span>的傅里叶系数满足
+$$
+\hat f(n) = -\frac{1}{in}\hat f^\prime(n)
+$$
+同理推导到<span class="arithmatex">\(C^k\)</span>，因此得到</p>
+<p>再circle上的函数只要是k阶可微的<span class="arithmatex">\(k\geq 2\)</span>，则其傅里叶级数一致收敛</p>
+<h2 id="_3">卷积</h2>
+<p>显然，根据积分的可加性，有
+$$
+\hat f(n) + \hat g(n) = \hat{f+g}(n)
+$$
+考虑两个函数的乘积
+$$
+\hat{fg}(n) = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(\theta)g(\theta) e^{-in\theta} d\theta
+$$
+定义<span class="arithmatex">\(f/g\)</span>的卷积
+$$
+f<em>g(x) = \frac{1}{2\pi}\int_{-\pi}^\pi f(y)g(x-y) dy=\frac{1}{2\pi}\int_{x-\pi}^{x+\pi} f(x-z) g(z) d z(z=  x-y)
+$$
+<span class="arithmatex">\(f(x- z) g(z)\)</span>也是关于<span class="arithmatex">\(2\pi\)</span>的函数，因此
+$$
+f</em> g(x) =\frac{1}{2\pi} \int_{-\pi}^{\pi} f(x- y) g(y)   dy= g<em>f(x)
+$$
+卷积满足可交换性（对于周期函数），给定<span class="arithmatex">\(g= 1\)</span>，得到
+$$
+f</em>g(x) = \frac{1}{2\pi}\int_{-\pi}^\pi f(y)d y
+$$
+傅里叶级数的partial sum满足
+$$
+\begin{aligned}
+S_N(f)(x)&amp;=\sum_{n=-N}^N \frac{1}{2\pi}\int_{-\pi}^\pi f(y) e^{-iny} dy  e^{inx}\
+&amp;=\frac{1}{2\pi}\int_{-\pi}^\pi f(y)\sum_{n=-N}^N e^{in(x-y) } dy\
+&amp;=\frac{1}{2\pi}\int_{-\pi}^\pi f(y) g_N(x-y) dy,g_N(z) = \sum_{n=-N}^N e^{inz}\
+&amp;=f * g_N
+\end{aligned}
+$$</p>
+<p>卷积的一个很好的性质是
+$$
+\hat{f * g}(n) = \hat {f(n)} \hat {g(n)}
+$$
+卷积的傅里叶级数等于两个函数对应的傅里叶级数乘积，证明如下
+$$
+\begin{aligned}
+\hat {f * g}(x) &amp;=\frac{1}{2\pi}\int_{-\pi}^\pi f(x-y) g(y) d y\ 
+LHS &amp;= (\frac{1}{2\pi})^2 \int_{-\pi}^{\pi}\int <em>{-\pi}^{\pi} f(x-y) g(y) dy  e^{-inx} dx \
+&amp;=(\frac{1}{2\pi})^2\int</em>{\Omega = (x,y)\in (-\pi,\pi)^2}f(x-y) e^{-in(x-y)} g(y) e^{-iny} d x dy \
+&amp;{=}(\frac{1}{2\pi})^2\int <em>{\Eta}f(u) e^{-inu} g(v)e^{-inv} d u dv,H对应二维空间上的菱形区域,u = x-y,v = y\
+&amp;=(\frac{1}{2\pi})^2\int</em>{-\pi}^\pi g(v )e ^{-inv} \int_{-\pi -v}^{\pi -v} f(u)e ^{-in u} d u  dv 
+\end{aligned}
+$$
+再根据周期函数定积分性质易得</p>
+<p>接下来我们将会证明，如果<span class="arithmatex">\(f/g\)</span>是连续的则它们的卷积是连续的，即估算
+$$
+\forall x_1,x_2,|f<em>g (x_1)  - f</em> g(x_2)|\label{abs_cov},|x_1-x_2|\leq \delta
+$$
+根据卷积交换性，<span class="arithmatex">\(\ref{abs_cov}\)</span>写成
+$$
+\begin{aligned}
+\frac{1}{2\pi}|\int_{-\pi}^\pi  f(y)  [g(x_1- y)- g(x_2-y) dy]|&amp;\leq\frac{\epsilon}{2\pi} \int_{-\pi}^\pi |f(y)| dy,g(x_1-y)-g(x_2-y)\leq \epsilon\
+&amp;\leq \epsilon B,f(y)被bound住
+\end{aligned}
+$$
+ 然而，卷积连续的连续的前提<strong>仅仅要求<span class="arithmatex">\(f/g\)</span>可积</strong>，并不要求连续或者一阶可导之类更强的条件，证明此结论需要借助下列引理</p>
+<blockquote>
+<p><span class="arithmatex">\(f\)</span>说可积函数并且被B bound住，则存在连续函数序列<span class="arithmatex">\(\{f_k\}_{k=1}^\infty\)</span>满足
+$$
+\sup_{x\in [-\pi,\pi]} |f_k(x)|\leq B
+$$
+并且
+$$
+\int _{-\pi}^\pi |f(x) - f_k(x)|dx \to 0
+$$
+这提供了一种用函数列积分估算可微周期函数积分的方式</p>
+</blockquote>
+<p>此时可以构造<span class="arithmatex">\(\{f_k\},\{g_k\}\)</span>两个函数列在黎曼积分上逼近<span class="arithmatex">\(f,g\)</span>，此时
+$$
+f<em> g - f_k * g_k = (f-f_k) g + f_k</em> (g - g_k),(f_k * g = g * f_k)
+$$
+这两部分都可以被容易地bound住
+$$
+|(f - f_k)  * g| = \frac{1}{2\pi} \int_{-\pi}^\pi |f(x-y) - f_k (x- y)||g(y)| dy\
+\leq \frac{1}{2\pi}\sup_y |g(y)| \int_{-\pi}^\pi |f(y) - f_k (y)| dy \to 0
+$$
+考虑到<span class="arithmatex">\(f_k/g_k\)</span>是连续的，结论可证</p>
+<blockquote>
+<p>利用另一个序列逼近要证明函数，并且另一个序列连续</p>
+</blockquote>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../ConvexOptimization/sensitive-analysis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: sensitive-analysis" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              sensitive-analysis
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Fourier-Analysis-Chapter-2-Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Fourier Analysis Chapter 2 Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Fourier Analysis Chapter 2 Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [{"login": null, "password": "admin", "username": "admin"}], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
