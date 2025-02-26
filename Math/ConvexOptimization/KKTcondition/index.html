@@ -1,0 +1,3110 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gaohomepage.github.io/Math/ConvexOptimization/KKTcondition/">
+      
+      
+        <link rel="prev" href="../Convex-Optimization-set-and-functions/">
+      
+      
+        <link rel="next" href="../Quasi-function/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>KKTcondition - Gao's Homepage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#convex-optimizationduality-iv0kkt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-header__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao's Homepage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              KKTcondition
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Gao&#39;s Homepage" class="md-nav__button md-logo" aria-label="Gao's Homepage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gao's Homepage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Paper-List/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paper List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chinese_version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chinese version
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Artificial Intelligence
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Generative model
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Generative model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/DALLE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DALLE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Generative_model/Diffusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diffusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Multimodal
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Multimodal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/ALBEF-and-BLIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALBEF and BLIP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Object-Detection-via-Prompt-Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Detection via Prompt Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Multimodal/Visual-Language-Model-CLIP-and-Prompt-Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visual Language Model:CLIP and Prompt Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Cycle-Self-Training/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cycle Self-Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/VQ-VAE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VQ-VAE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Others/Variation_Inference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GMM EM VI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Robotics Embodiedai
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Robotics Embodiedai
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/CLIP4EmbodiedAI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLIP4EmbodiedAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/ECCV-Paper-Reading-Track2Act/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paper Reading(Track2Act)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Robotics_Embodiedai/IROS-Paper-Reading-Object-Centric-3D-Representation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IROS Paper Reading Object Centric 3D Representation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vision
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Contrast-and-Self-Supervised-Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contrast and Self-Supervised Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/MAE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MAE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/Moco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moco
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/No-negative-sample-Contrast-Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    No negative sample Contrast Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Artificial_Intelligence/Vision/selective-search-nms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    selective-search-nms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Computer Graphics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Graphics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_Graphics/Computer_Graphics_Basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CG Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Financial Investment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Financial Investment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Future-Contract-Market/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Financial Future Contract Market
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/Financial-Intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Financial(Intro)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-Macroeconomic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quat Macroeconomic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Financial_Investment/quat-stock-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quat stock data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ConvexOptimization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            ConvexOptimization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convex-Optimization-Convex-Problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convex Optimization Convex Problems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convex-Optimization-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convex Optimization Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Convex-Optimization-set-and-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Convex Optimization:set and functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    KKTcondition
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    KKTcondition
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      互补松弛条件(对于一般优化问题，对偶间隙为0)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互补松弛条件(对于一般优化问题，对偶间隙为0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原问题可行性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      对偶问题的可行性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      互补松弛条件(对偶间隙为0)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳定性(函数可微)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题：KKT条件何时是充要条件？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      例子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      半正定二次规划
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-filling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water filling问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Water filling问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法（灌水算法）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kkt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      KKT条件和一阶最优性条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      凸问题等价形式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="凸问题等价形式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      范数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      带框约束的线性规划问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quasi-function/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quasi function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duality-explain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    duality explain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duality-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    duality review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimization-method/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    optimization method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitive-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sensitive-analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fourier Analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fourier Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Basic-Properties-of-Fourier-Series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Analysis(Basic Properties of Fourier Series)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Chapter-2-Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Analysis Chapter 2 Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Chapter-3-Convergence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier Analysis Chapter 3 Convergence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier_Analysis/Fourier-Analysis-Intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier_Analysis_Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information Theory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Data-Transmission-Inequality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Transmission Inequality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Element-of-Information-Chapter-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Element of Information(Chapter 2)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Entropy-and-Channel-Capacity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entropy and Channel Capacity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Measures-of-Discrete-Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information Measures of Discrete Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-AEP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information Theory AEP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Divergence-and-variational-distance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information Theory(Divergence and variational distance)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information_Theory/Information-Theory-Mathematical-Basic-and-Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information Theory:Mathematical Basic and Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Linear Algebra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linear_Algebra/Matrix-Conditional-Num/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性代数：线性方程组解的稳定性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/optimize-transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    optimize transport
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Open Courses
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Open Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CMU15445
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            CMU15445
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/CMU15445/CMU15445-24-lab0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CMU15445_24_lab0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NJU OS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            NJU OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-Parallel-Programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NJU OS Parallel Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Open_Courses/NJU_OS/NJU-OS-mutex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NJU OS mutex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/Objective-File/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Objective File
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cpp
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cpp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../System/cpp/Cpp-diamond-hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cpp diamond hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tech Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Tech Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/PytorchNLLloss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PytorchNLLloss
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/Singularity-Intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Singularity Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech_Notes/ssh-forward/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ssh forward
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      互补松弛条件(对于一般优化问题，对偶间隙为0)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="互补松弛条件(对于一般优化问题，对偶间隙为0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      原问题可行性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      对偶问题的可行性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#0_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      互补松弛条件(对偶间隙为0)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳定性(函数可微)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题：KKT条件何时是充要条件？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      例子
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="例子">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      半正定二次规划
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-filling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water filling问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Water filling问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      算法（灌水算法）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kkt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      KKT条件和一阶最优性条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      凸问题等价形式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="凸问题等价形式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      范数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      带框约束的线性规划问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="convex-optimizationduality-iv0kkt">Convex Optimization(Duality IV—论对偶间距为0的若干推论，KKT条件)</h1>
+<h2 id="0">互补松弛条件(对于一般优化问题，对偶间隙为0)</h2>
+<p>考虑一般优化问题(不一定凸)
+$$
+\min f_0(x)\
+s.t \ f_i(x)\leq 0,i =1,2,\cdots,m\
+h_i(x)=0,i=1,2,\cdots,p
+$$
+对偶函数
+$$
+g(\lambda,v) = \inf_x {f_0(x)+\sum_i \lambda_i f_i(x)+\sum_i v_i h_i(x) }
+$$
+对偶问题
+$$
+\max g(\lambda,v)\
+\lambda \geq 0
+$$
+做出两个假设</p>
+<ol>
+<li>对偶间隙为0</li>
+<li>假设所有函数可微</li>
+</ol>
+<p>假设对偶问题和原问题最优解为
+$$
+x^<em>,\lambda^</em>,v^<em>
+$$
+必然是可行解，满足
+$$
+f_i(x^</em>)\leq 0\
+h_i(x^<em>) =0\
+\lambda^</em>\geq 0
+$$
+对偶间隙为0意味着
+$$
+f_0(x^<em>) = g(\lambda^</em>,v^<em>) =\inf_x {f_0(x)+\sum_i \lambda_i^</em> f_i(x)+\sum_i v_i^<em> h_i(x) }
+$$
+<span class="arithmatex">\(\inf\)</span>满足
+$$
+g(\lambda^</em>,v^<em>) \leq f_0(x^</em>) +\sum_i \lambda _i^<em> f_i(x^</em>)+\sum_i v_i^<em> h_i(x^</em>)\leq f_0(x^<em>)
+$$
+因此在</em><em>对偶间距为0</em>*的前提下，上述不等式全部是等式，即</p>
+<ol>
+<li><span class="arithmatex">\(L(x^*,\lambda^*,v^*) = g(\lambda^*,v^*)\)</span></li>
+<li><span class="arithmatex">\(L(x^*,\lambda^*,v^*) = f_0(x^*)\)</span></li>
+</ol>
+<p>等式（2）表明对于不等式约束，必然有
+$$
+\lambda_i^<em> f_i(x^</em>) = 0\to \lambda_i^<em> = 0 \or f_i(x^</em>) =0(\lambda_i^<em> =0)
+$$
+这被称为</em><em>互补松弛条件（Complementary Slackness）</em>*</p>
+<p>同时，等式（1）表明
+$$
+x^<em> ={\arg\min}_x L(x,\lambda^</em>,v^<em>)
+$$
+请注意，<span class="arithmatex">\(L\)</span>关于x是</em><em>定义在全空间上的函数！</em>*,<span class="arithmatex">\(x^*\)</span>是L在全空间上的全局最优</p>
+<p>根据可微条件，有
+$$
+\frac{\partial L(x,\lambda^<em>,v^</em>)}{\partial x} =0
+$$
+拆开看梯度
+$$
+\nabla f_0(x^<em>) +\sum_{i=1}^m \lambda_i^</em> \nabla f_i(x^<em>) +\sum_{i=1}^p v_i^</em> \nabla h_i(x^*) = 0
+$$
+这被称为stationary。对于得到的等式和不等式分成四类</p>
+<h3 id="_1">原问题可行性</h3>
+<div class="arithmatex">\[
+f_i(x^*)\leq 0\\
+h_i(x^*) = 0
+\]</div>
+<h3 id="_2">对偶问题的可行性</h3>
+<div class="arithmatex">\[
+\lambda_i^* \geq 0
+\]</div>
+<h3 id="0_1">互补松弛条件(对偶间隙为0)</h3>
+<div class="arithmatex">\[
+\lambda_i&gt;0\to f_i(x^*) = 0
+\]</div>
+<h3 id="_3">稳定性(函数可微)</h3>
+<div class="arithmatex">\[
+\nabla f_0(x^*) +\sum_{i=1}^m \lambda_i^* \nabla f_i(x^*) +\sum_{i=1}^p v_i^* \nabla h_i(x^*) = 0
+\]</div>
+<p>它们的关系是</p>
+<pre><code class="language-mermaid">graph LR
+A[原问题可行性]
+B[对偶问题可行性]
+C[互补松弛条件]
+D[稳定性]
+A--对偶间距为0--&gt;C
+B--对偶间距为0--&gt;C
+C--可微--&gt;D
+</code></pre>
+<p>这些条件被称为KKT条件</p>
+<h2 id="kkt">问题：KKT条件何时是充要条件？</h2>
+<blockquote>
+<p>定理：原问题满足三个条件，KKT条件是充要条件</p>
+<ol>
+<li>凸问题</li>
+<li>函数可微</li>
+<li>对偶间隙为0</li>
+</ol>
+</blockquote>
+<p>下面证明充分性</p>
+<blockquote>
+<p><span class="arithmatex">\((x^*,\lambda^*,v^*)\)</span>满足KKT条件<span class="arithmatex">\(\Rightarrow,(x^*,\lambda^*,v^*)\)</span>为对偶问题和原问题最优解</p>
+</blockquote>
+<p>实际上只要证明
+$$
+g(\lambda^<em>,v^</em>)= f_0(x^*)
+$$
+（这是因为根据minmax定理，必然有<span class="arithmatex">\(g(\lambda,v)\leq f_0(x)\)</span>），能取到等号已经是极限</p>
+<p>可行性条件可以得到
+$$
+L(x,\lambda^<em>,v^</em>) = f_0(x)+\sum_i \lambda_i^* f_i(x) +\sum_i v_i h_i(x)
+$$
+<span class="arithmatex">\(h_i(x)\)</span>是仿射函数，<span class="arithmatex">\(f_i(x)\)</span>是凸函数，因此非负加权和<span class="arithmatex">\(L(x,\lambda^*,v^*)\)</span>关于x凸</p>
+<blockquote>
+<p>凸函数一阶偏导0为全局最优</p>
+</blockquote>
+<p>因此
+$$
+L(x,\lambda^<em>,v^</em>) \geq L(x^<em>,\lambda^</em>,v^<em>)
+$$
+考虑<span class="arithmatex">\(g(\lambda,v)\)</span>，显然
+$$
+\begin{aligned}
+g(\lambda^</em>,v^<em>)&amp; =\inf_x L(x,\lambda^</em>,v^<em>)\
+&amp;=L(x^</em>,\lambda^<em>,v^</em>)(上述证明说明x^<em>是L的全局最优)\
+&amp;=f_0(x^</em>) +\sum_{i=1}^m \lambda^<em>_i f_i(x^</em>)+\sum_{i=1}^p v_i^<em> h_i(x)
+\end{aligned}
+$$
+互补松弛条件，得到
+$$
+\sum_{i=1}^m \lambda_i^</em> f_i(x^<em>) = 0
+$$
+因此
+$$
+g(\lambda^</em> ,v^<em>) = f_i(x^</em>)
+$$
+得证</p>
+<blockquote>
+<p>求解凸优化等价于求解KKT条件</p>
+</blockquote>
+<p>优化问题之间的关系用一下表示
+$$
+A=可微优化问题\
+B=凸并且可微优化问题,B\subseteq A\
+C=满足p^<em> =d^</em>的可微优化问题,C\subseteq A\
+C\bigcap B的问题KKT是充要条件
+$$</p>
+<h2 id="_4">例子</h2>
+<h3 id="_5">半正定二次规划</h3>
+<div class="arithmatex">\[
+\min \frac{1}{2}x^T P x+q^T x + r\\
+s.t\quad Ax = b
+\]</div>
+<p>写出KKT条件
+$$
+Ax^<em> = b(primal)\
+\frac{\partial L}{\partial x^</em>} = P x^<em> +q + A{v^</em>}^T =0
+$$
+两个线性方程，写成
+$$
+\begin{pmatrix}
+P &amp; A^T \
+A &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+x\
+v^*
+\end{pmatrix} = \begin{pmatrix}
+-q\
+b
+\end{pmatrix}
+$$
+等价于求解线性方程组</p>
+<p>约束改成 <span class="arithmatex">\(Ax\geq b\)</span>，则会导致互补松弛条件极难求解</p>
+<h3 id="water-filling">Water filling问题</h3>
+<p>变量是x，<span class="arithmatex">\(\alpha\)</span>是参数，满足<span class="arithmatex">\(\alpha_i&gt; 0\)</span>
+$$
+\min - \sum_{i=1}^n \log (\alpha_i+x_i)\
+s.t\ x\geq 0,1^T x = 1
+$$
+KKT条件(primal)
+$$
+x^<em> \geq 0\
+1^Tx^</em> =1
+$$
+对偶变量<span class="arithmatex">\(\lambda^*\)</span>约束
+$$
+\lambda^<em> \geq 0
+$$
+互补松弛
+$$
+\lambda^</em>_i x_i^<em> =0
+$$
+微分条件，拉格朗日函数
+$$
+L(x,\lambda^</em>,v^<em>) = -\sum_{i=1}^n \log (\alpha_i+x_i)-\lambda^</em>{x^<em>}^T  +v^</em> (1^T x-1)
+$$</p>
+<blockquote>
+<p>注意<span class="arithmatex">\(\lambda^*\in\R^n,v^*\in \R\)</span></p>
+</blockquote>
+<p>求微分
+$$
+\frac{\partial L}{\partial x_i} =- \frac{1}{\alpha_i + x_i}-\lambda^<em>_i+ v^</em>=0\\
+v^<em> =\lambda_i^</em>+\frac{1}{\alpha_i+x_i^<em>}
+$$
+微分条件等价为
+$$
+v^</em>(\alpha_i+x_i^<em>) =\lambda_i^</em>(\alpha_i+x_i^<em>)+1\Leftrightarrow\
+v^</em>(\alpha_i+x_i^<em>) = \lambda_i^</em> \alpha_i+1(\lambda_i^<em>x_i^</em>=0)\Leftrightarrow\ 
+\lambda_i^<em> =\frac{v^</em>(\alpha_i+x_i^<em>)-1 }{\alpha_i}\
+x_i^</em>=\frac{\lambda_i^<em> \alpha_i +1 -\alpha_i v^</em>}{\alpha_i}
+$$
+<span class="arithmatex">\(\lambda_i^*\geq 0\)</span>等价为
+$$
+v^<em>(\alpha_i+x_i^</em>)-1\geq 0\to v^<em>\geq \frac{1}{\alpha_i +x_i^</em>}
+$$</p>
+<blockquote>
+<p>若<span class="arithmatex">\(v^*\geq \frac{1}{\alpha_i}\)</span>，可以推导出<span class="arithmatex">\(\lambda_i^* &gt; 0\)</span>，则可知<span class="arithmatex">\(x_i^* = 0\)</span></p>
+<p>若<span class="arithmatex">\(v^*&lt; \frac{1}{\alpha_i}\)</span>，则可知<span class="arithmatex">\(x_i^*&gt;0\)</span>，<span class="arithmatex">\(x_i^* = \frac{1}{v^*}-\alpha_i\)</span>（这是因为<span class="arithmatex">\(x_i^*&gt;0\)</span>，必然有<span class="arithmatex">\(\lambda_i^*=0\)</span>）</p>
+</blockquote>
+<ol>
+<li><span class="arithmatex">\(v^*\geq \frac{1}{\alpha_i}\to x_i^*=0\)</span></li>
+<li><span class="arithmatex">\(v^*&lt;\frac{1}{\alpha_i}\to x_i^* =\frac{1}{v^*}-\alpha_i\)</span></li>
+</ol>
+<h4 id="_6">算法（灌水算法）</h4>
+<p>绘制<span class="arithmatex">\(\alpha_i - i\)</span>图像</p>
+<p><img alt="image-20230107175426602" src="https://s2.loli.net/2023/01/07/K5v7BtgTcUEHOfb.png" /></p>
+<p>实现代表<span class="arithmatex">\(\alpha_i-i\)</span>，虚线代表<span class="arithmatex">\(\frac{1}{v^*}\)</span>，在<span class="arithmatex">\(\frac{1}{v^*}\)</span>以下的区域，<span class="arithmatex">\(x_i\)</span>取值为图上着色正方形</p>
+<blockquote>
+<p>什么时候得到最优解？</p>
+<p>提升<span class="arithmatex">\(\frac{1}{v^*}\)</span>(提升水面高度)，使得水面以下区域高度和之和为1(primal条件)</p>
+</blockquote>
+<h3 id="kkt_1">KKT条件和一阶最优性条件</h3>
+<p>对可微凸优化
+$$
+\min f_0(x)\
+s.t \quad x\geq 0
+$$
+最优性条件等价于
+$$
+x\geq 0\
+\nabla f_0(x)\geq 0\
+x_i \nabla f_0(x)_i =0(Complementary)
+$$
+x和<span class="arithmatex">\(\nabla f_0(x)\)</span>互补</p>
+<p>KKT条件
+$$
+x^<em>\geq 0\
+\lambda^</em>\geq 0\
+\lambda_i^<em> x_i^</em> = 0\
+\nabla f_0(x^<em>) -\lambda^</em> = 0
+$$
+<span class="arithmatex">\(\lambda\)</span>和<span class="arithmatex">\(x\)</span>互补，替换<span class="arithmatex">\(\lambda^*\)</span>
+$$
+\nabla f_0(x^<em>)x_i^</em> =0\
+\nabla f_0(x^*)\geq 0
+$$</p>
+<h3 id="_7">凸问题等价形式</h3>
+<p>原问题有两种形式A,B，它们的对偶问题不一定相同
+$$
+\min f_0(Ax+b)
+$$
+<span class="arithmatex">\(f_0\)</span>是凸函数</p>
+<p>对偶问题是
+$$
+L(x) = f_0(Ax+b)\
+g(\lambda,v) = \inf_x f_0(Ax+b)\
+\max g(\lambda,v) =\inf_x f_0(Ax+b)
+$$
+必然有<span class="arithmatex">\(p^*=d^*\)</span>(原问题和对偶问题完全相同)</p>
+<p>现在考虑原问题的等价问题
+$$
+\min f_0(y)\
+y=Ax+b
+$$
+记等价问题和等价问题的对偶问题最优解为<span class="arithmatex">\(p^*_1,d^*_1\)</span>，写出对偶问题
+$$
+L(y,x,v) = f_0(y) +  v^T ( Ax+b-y) = f_0(y)- v^T y +v^T Ax+v^Tb  \
+g(v) =\inf_{x,y} L(y,\lambda,v) \
+\inf_y (f_0(y)-v^Ty) =-\sup_y (v^T y -f_0(y)) =-f^*(v)(函数共轭)\
+\inf_x -v^T Ax-v^T b =-\infty(v^T A\neq 0),-v^T b(v^T A=0)
+$$
+注意函数L(y,x,v)中y和x解耦，不存在约束，因此可以分别求极小</p>
+<p>得到
+$$
+g(v) =\left{
+\begin{aligned}
+&amp; -f^<em>(v)-v^Tb ,v^TA =0\
+&amp; -\infty,v^T A\neq 0
+\end{aligned}
+\right.
+$$
+对偶问题是
+$$
+\max v^T b - f_0^</em>(v)\
+s.t\quad v^T A =0
+$$
+对偶问题1和原始对偶问题有很大的不同</p>
+<h4 id="_8">范数</h4>
+<div class="arithmatex">\[
+\min \parallel Ax-v\parallel
+\]</div>
+<p>等价问题
+$$
+\min \parallel y\parallel\
+s.t\quad  y = Ax -b
+$$
+对偶函数
+$$
+L(x,y,v) =\parallel y \parallel -v^T y +v^TAx -v^Tb\
+(引用上面讨论的结论)
+g(v) =\inf_{x,y}L(x,y,v) =\left{
+\begin{aligned}
+&amp;-v^T b+\parallel v\parallel_<em>\
+&amp;-\infty
+\end{aligned}
+\right.
+$$
+因此对偶问题是
+$$
+\max -v^T b -\parallel v\parallel_</em>\
+s.t\quad v^T A=0
+$$
+上述问题的<strong>值</strong>和下列问题等价
+$$
+\max\ v^T b-\parallel v\parallel_*\
+s.t\quad v^T A =0
+$$</p>
+<blockquote>
+<p>可以理解为用w代替-v，得到
+$$
+\max w ^T b -\parallel v\parallel_*\
+s.t\quad w^T A=0
+$$</p>
+</blockquote>
+<p>因此这两个问题的值相同</p>
+<p>对原问题还有一种变换
+$$
+\min \frac{1}{2}\parallel y \parallel^2\
+s.t\quad Ax -b = y
+$$</p>
+<blockquote>
+<p>两个问题<strong>解</strong>是等价的，这两个问题等价本质上来自于范数的非负性，因此约束目标实际上是等价的
+$$
+\min \parallel y \parallel\Leftrightarrow\min \parallel y \parallel^2
+$$</p>
+</blockquote>
+<p>它的对偶问题写成
+$$
+L(x,y,v) =\frac{1}{2}\parallel y \parallel^2 +v^T (Ax - b -y)\
+g(v) =\inf_{x,y} L(x,y,v) =\left{
+\begin{aligned}
+&amp; -v^T b-\frac{1}{2}\parallel v\parallel_<em>^2,v^T A =0\
+&amp;-\infty ,v^TA \neq 0
+\end{aligned}
+\right.
+$$
+对偶问题是
+$$
+\max  -v^T b -\frac{1}{2}\parallel v\parallel_</em>^2\
+s.t\quad v^T A=0
+$$
+约束目标不同</p>
+<h3 id="_9">带框约束的线性规划问题</h3>
+<p>约束是高维空间的立方体
+$$
+\min c^T x\
+s.t\quad Ax=b\
+l\leq x\leq u
+$$</p>
+<div class="arithmatex">\[
+\begin{aligned}
+L(x,\lambda_1,\lambda_2,v) &amp;=c^T x +v^T(Ax - b)+\lambda_1^T (l-x)+\lambda_2^T (x-u)\\
+&amp;= (c^T +v^T A-\lambda^T_1+\lambda_2^T) x-v^T b +\lambda_1^T l-\lambda_2^T u
+\end{aligned}
+\]</div>
+<p>对偶问题
+$$
+\max -b^T v+\lambda_1^T l-\lambda_2^T u\
+s.t\quad A^T v+c^T -\lambda_1^T+\lambda_2^T =0,\lambda_1\geq 0,\lambda_2\geq 0
+$$
+仍然是线性规划，对原问题做等价变换(将目标函数和框约束写成一个形式)
+$$
+\min f_0(x)\
+s.t\quad Ax = b\
+f_0(x) =\left{
+\begin{aligned}
+&amp;c^T x,l\leq x\leq u\
+&amp;\infty ,else
+\end{aligned}
+\right.
+$$
+这个问题对偶问题
+$$
+L(x,v) =f_0(x)+v^T (Ax -b)\
+g(v) =\inf_x f_0(x)+v^T (Ax - b) = \inf_{x\in [l,u]} c^T x+v^T(Ax - b)
+$$
+最终还是一个框约束的线性规划
+$$
+g(v) =\inf_{x\in [l,u]} (A^Tv +c)^T x-v^T b
+$$
+不包含等式约束让问题变得简单，观察
+$$
+A^T v+c
+$$
+这是一个n维向量，记作<span class="arithmatex">\((w_1,w_2,\cdots,w_n)\)</span>，显然，如果</p>
+<ol>
+<li><span class="arithmatex">\(w_i\geq 0\to x_i = u\)</span></li>
+<li><span class="arithmatex">\(w_i&lt;0\to x_i = l\)</span></li>
+</ol>
+<p>解记作
+$$
+g(v) = -v^T v +l^T (A^T v +c)^+-u^T (A^T v+c)^-
+$$</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [{"login": null, "password": "admin", "username": "admin"}], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
